@@ -64,19 +64,10 @@ session_start ();
       <div class="col-25">
         <label for="date">Date</label>
       </div>
-      <div class="col-75">
-      <input type="datetime-local" id="datetime" name="datetime" required>
+      <div class="col-75"><?php $date = date('Y-m-d');?>
+      <input type="datetime-local" id="datetime" name="datetime" min="<?php $date?>" required>
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="status">Treasure hunt status</label>
-      </div>
-      <div class="col-75">
-        <select id="status" name="status" disabled>
-          <option value="created">Created</option>
-        </select>
-      </div>
     </div>
     <div class="row">
       <input type="submit" value="Create Treasure Hunt">
@@ -90,4 +81,5 @@ session_start ();
   </body>
   
    <script src="js/number.js"></script>
+   <script src="js/disablePreviousDates.js"></script>
 </html>

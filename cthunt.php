@@ -4,10 +4,9 @@ session_start ();
 
 $thname=$_POST['thname'];
 $datetime=$_POST['datetime'];
-$status=$_POST['status'];
 
 $sql = "INSERT INTO treasure_hunt (name,datetime,status)
-VALUES ('$thname','$datetime','$status')";
+VALUES ('$thname','$datetime','Created')";
 mysqli_query($conn,$sql);
 $last_id = $conn->insert_id;
 $user=$_SESSION["id_user"];
