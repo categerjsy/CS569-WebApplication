@@ -11,7 +11,6 @@ session_start ();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='stylesheet' href='sweetalert.css'>
     <title>AR Treasure Hunt</title>
     <link
       rel="stylesheet"
@@ -22,7 +21,6 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -46,67 +44,39 @@ session_start ();
   </nav>
     <section class="showcase-area" id="showcase">
       <div class="showcase-container">
-        <h1 class="main-title" id="home">Create your riddle!</h1>
+        <h1 class="main-title" id="home">Create your team!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
+
     <section id="about">
     <div class="container">
-    <form action="criddle.php" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
-        <label for="textRiddle">Riddle's text</label>
+          <p>Please sent this link to your team!</p>
       </div>
       <div class="col-75">
-      <textarea id="riddleText" name="riddleText" rows="4" cols="50" required>
-        Please write your riddle's text here
-      </textarea>
+      <?php $team=$_SESSION["id_team"];
+       echo "<a>https://localhost/CS569-WebApplication/participateTeam.php?id=$team</a>"?>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+    <p>OR</p>
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="solution">Riddle's solution</label>
+      <p>Please sent this QRCode to your team!</p>
       </div>
       <div class="col-75">
-        <input type="text" id="solution" name="solution" placeholder="Riddle's solution" required>
+      <div id="qrcode"></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="objectAR">Object AR</label>
-      </div>
-      <div class="col-75">
-        <select id="object" name="object">
-          <option value="GoldCoin">Gold Coin</option>
-          <option value="SilverCoin">Silver Coin</option>
-          <option value="BronzeCoin">Bronze Coin</option>
-        </select>
-      </div>
     </div>
     <div class="row">
-      <div class="col-25">
-        <label for="textInfo">Information text</label>
-      </div>
-      <div class="col-75">
-      <textarea id="infoText" name="infoText" rows="4" cols="50" required>
-        Please write your information text here
-      </textarea>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="number">Points for treasure hunt</label>
-      </div>
-      <!-- <div class="col-75"> -->
-        <div class="quantity">
-        <input type="number" name="number" min="1" step="1" value="1">
-        </div>
-      </div>
-    <!-- </div> -->
-    <div class="row">
-      <input type="submit" onclick="fireSweetAlert()" value="Create Riddle">
-    </div>
-  </form>
+
 </div>
     </section>
     <footer id="footer">
@@ -114,17 +84,18 @@ session_start ();
     </footer>
   </body>
   <script>
-
-    function fireSweetAlert() {
-        Swal.fire(
-            'Warning!',
-            'All riddles are public for now!',
-            'warning'
-        )
+    window.onload = function qr() {
+    const qrcode = new QRCode(document.getElementById('qrcode'), {
+    text: window.location.href,
+    width: 128,
+    height: 128,
+    colorDark : '#000',
+    colorLight : '#fff',
+    correctLevel : QRCode.CorrectLevel.H
+    });
     }
-
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/number.js"></script>
-  <script src="js/disablePreviousDates.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+   <script src="js/number.js"></script>
+   <script src="js/disablePreviousDates.js"></script>
 </html>

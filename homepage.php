@@ -75,7 +75,7 @@ session_start ();
     </footer>
   </body>
   <script>
-    window.onload = function riddle() {
+    window.onload = function riddle() {//na allaksw name
       <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'riddle') { ?>
         Swal.fire(
             'Good job!',
@@ -84,16 +84,25 @@ session_start ();
         )
         <?php }?>
         <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'team') { ?>
-        Swal.fire(
-            'Good job!',
-            "You created your team.That's amazing!",
-            'success'
-        )
+        // Swal.fire(
+        //     'Good job!',
+        //     "You created your team.That's amazing!",
+        //     'success'
+        // )
+        swal({
+          title: "Success!",
+          text: "You created your team.That's amazing!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/CS569-WebApplication/generatelinkQR.php";
+        });
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
         Swal.fire(
             'Good job!',
-            "You created your hunt.That's amazing!</p>",
+            "You created your hunt.That's amazing!",
             'success'
         )
         <?php }?>
@@ -101,6 +110,8 @@ session_start ();
 
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
   
 </html>
