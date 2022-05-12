@@ -21,6 +21,7 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
+    <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -71,7 +72,8 @@ session_start ();
       <p>Please sent this QRCode to your team!</p>
       </div>
       <div class="col-75">
-      <div id="qrcode"></div>
+      <!-- <div id="qrcode"></div> -->
+      <div id="qrcode" style="height:450px;width:450px;" v-loading="PanoramaInfo.bgenerateing"></div>
       </div>
     </div>
     </div>
@@ -85,18 +87,52 @@ session_start ();
     </footer>
   </body>
   <script>
-    window.onload = function qr() {
-    const qrcode = new QRCode(document.getElementById('qrcode'), {
-    text: "https://localhost/CS569-WebApplication/participateTeam.php?id="+"<?php echo $_SESSION['id_team'] ?>",
-    width: 128,
-    height: 128,
-    colorDark : '#000',
-    colorLight : '#fff',
-    correctLevel : QRCode.CorrectLevel.H
-    });
+    function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  delete link;
+};
+
+window.onload = function ()
+{
+  console.log('onload');
+  let qrcode = new QRCode(document.getElementById("qrcode"),
+             {
+              text: "https://localhost/CS569-WebApplication/participateTeam.php?id="+"<?php echo $_SESSION['id_team'] ?>",
+              width: 450,
+              height: 450,
+              colorDark : "#000000",
+              colorLight : "#ffffff",
+              correctLevel : QRCode.CorrectLevel.H
+            });  
+  setTimeout(
+    function ()
+    {
+        let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
+        downloadURI(dataUrl, 'qrcode.png');
     }
+    ,1000);
+
+};
+    // window.onload = function qr() {
+    // const qrcode = new QRCode(document.getElementById('qrcode'), {
+    // text: "https://localhost/CS569-WebApplication/participateTeam.php?id="+"<?php echo $_SESSION['id_team'] ?>",
+    // width: 128,
+    // height: 128,
+    // colorDark : '#000',
+    // colorLight : '#fff',
+    // correctLevel : QRCode.CorrectLevel.H
+    // });
+    // }
+
+    
   </script>
+ 
   <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
-   <script src="js/number.js"></script>
-   <script src="js/disablePreviousDates.js"></script>
+  <script src="js/number.js"></script>
+  <script src="js/disablePreviousDates.js"></script>
 </html>
