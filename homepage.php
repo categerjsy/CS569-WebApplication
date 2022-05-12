@@ -84,11 +84,6 @@ session_start ();
         )
         <?php }?>
         <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'team') { ?>
-        // Swal.fire(
-        //     'Good job!',
-        //     "You created your team.That's amazing!",
-        //     'success'
-        // )
         swal({
           title: "Success!",
           text: "You created your team.That's amazing!",
@@ -100,11 +95,15 @@ session_start ();
         });
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
-        Swal.fire(
-            'Good job!',
-            "You created your hunt.That's amazing!",
-            'success'
-        )
+          swal({
+          title: "Success!",
+          text: "You created your treasurehut.That's amazing!Now lets add riddles!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/CS569-WebApplication/addriddles.php";
+        });
         <?php }?>
     }
 
