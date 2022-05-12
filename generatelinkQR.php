@@ -72,7 +72,6 @@ session_start ();
       <p>Please sent this QRCode to your team!</p>
       </div>
       <div class="col-75">
-      <!-- <div id="qrcode"></div> -->
       <div id="qrcode" style="height:450px;width:450px;" v-loading="PanoramaInfo.bgenerateing"></div>
       </div>
     </div>
@@ -118,17 +117,6 @@ window.onload = function ()
     ,1000);
 
 };
-    // window.onload = function qr() {
-    // const qrcode = new QRCode(document.getElementById('qrcode'), {
-    // text: "https://localhost/CS569-WebApplication/participateTeam.php?id="+"<?php echo $_SESSION['id_team'] ?>",
-    // width: 128,
-    // height: 128,
-    // colorDark : '#000',
-    // colorLight : '#fff',
-    // correctLevel : QRCode.CorrectLevel.H
-    // });
-    // }
-
     
   </script>
  
