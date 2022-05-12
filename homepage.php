@@ -20,6 +20,8 @@ session_start ();
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/st.css" />
+    <link rel='stylesheet' href='sweetalert.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -51,14 +53,7 @@ session_start ();
     <section id="about">
       <div class="about-wrapper container">
         <div class="about-text">
-        <?php
-            if (isset($_GET["msg"]) && $_GET["msg"] == 'team') {
-                print "<p style='color: green;'>You created your team.That's amazing!</p>";
-            }
-            if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') {
-              print "<p style='color: green;'>You created your hunt.That's amazing!</p>";
-            }
-          ?>
+        
           <p class="small">About Us</p>
           <h2>Kati  na leei ti orama exoume :#</h2>
           <p>
@@ -79,9 +74,32 @@ session_start ();
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-  <!-- 
-    .................../ JS Code for smooth scrolling /...................... -->
+  <script>
+    window.onload = function riddle() {
+      <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'riddle') { ?>
+        Swal.fire(
+            'Good job!',
+            'Your riddle is ready!',
+            'success'
+        )
+        <?php }?>
+        <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'team') { ?>
+        Swal.fire(
+            'Good job!',
+            "You created your team.That's amazing!",
+            'success'
+        )
+        <?php }?>
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
+        Swal.fire(
+            'Good job!',
+            "You created your hunt.That's amazing!</p>",
+            'success'
+        )
+        <?php }?>
+    }
 
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   

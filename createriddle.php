@@ -11,6 +11,7 @@ session_start ();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='sweetalert.css'>
     <title>AR Treasure Hunt</title>
     <link
       rel="stylesheet"
@@ -21,6 +22,7 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -48,16 +50,15 @@ session_start ();
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
-
     <section id="about">
     <div class="container">
-    <form action="criddle.php" method="post">
+    <form action="criddle.php" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="col-25">
         <label for="textRiddle">Riddle's text</label>
       </div>
       <div class="col-75">
-      <textarea id="riddleText" name="riddleText" rows="4" cols="50">
+      <textarea id="riddleText" name="riddleText" rows="4" cols="50" required>
         Please write your riddle's text here
       </textarea>
       </div>
@@ -84,27 +85,17 @@ session_start ();
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="image">Image for winning</label>
-      </div>
-      <div class="col-75">
-      <input type="file" name="pik-pok_db" id="real-file" hidden="hidden"/>
-      <button type="button" id="custom-button" name="upload">Choose a photo!</button>
-      <span id="custom-text">No file choosen, yet.</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
         <label for="textInfo">Information text</label>
       </div>
       <div class="col-75">
-      <textarea id="infoText" name="infoText" rows="4" cols="50">
+      <textarea id="infoText" name="infoText" rows="4" cols="50" required>
         Please write your information text here
       </textarea>
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="number">Number of team players</label>
+        <label for="number">Points for treasure hunt</label>
       </div>
       <!-- <div class="col-75"> -->
         <div class="quantity">
@@ -113,7 +104,7 @@ session_start ();
       </div>
     <!-- </div> -->
     <div class="row">
-      <input type="submit" value="Create Riddle">
+      <input type="submit" onclick="fireSweetAlert()" value="Create Riddle">
     </div>
   </form>
 </div>
@@ -122,7 +113,18 @@ session_start ();
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-  
-   <script src="js/number.js"></script>
-   <script src="js/disablePreviousDates.js"></script>
+  <script>
+
+    function fireSweetAlert() {
+        Swal.fire(
+            'Warning!',
+            'All riddles are public for now!',
+            'warning'
+        )
+    }
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/number.js"></script>
+  <script src="js/disablePreviousDates.js"></script>
 </html>
