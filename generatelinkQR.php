@@ -57,7 +57,8 @@ session_start ();
       </div>
       <div class="col-75">
       <?php $team=$_SESSION["id_team"];
-       echo "<a>https://localhost/CS569-WebApplication/participateTeam.php?id=$team</a>"?>
+       echo "<a>https://localhost/CS569-WebApplication/participateTeam.php?id=$team</a>"
+      ?>
       </div>
     </div>
     <div class="row">
@@ -86,7 +87,7 @@ session_start ();
   <script>
     window.onload = function qr() {
     const qrcode = new QRCode(document.getElementById('qrcode'), {
-    text: window.location.href,
+    text: "https://localhost/CS569-WebApplication/participateTeam.php?id="+"<?php echo $_SESSION['id_team'] ?>",
     width: 128,
     height: 128,
     colorDark : '#000',
