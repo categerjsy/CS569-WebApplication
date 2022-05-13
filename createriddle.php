@@ -11,7 +11,6 @@ session_start ();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='stylesheet' href='sweetalert.css'>
     <title>AR Treasure Hunt</title>
     <link
       rel="stylesheet"
@@ -22,6 +21,7 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
+    <link rel='stylesheet' href='sweetalert.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>
@@ -36,7 +36,7 @@ session_start ();
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
               <li><a href="#teams">Teams</a></li>
-              <li><a href="createriddle.php">Create Riddle</a></li>
+              <li><a href="createriddle.php?msg=first">Create Riddle</a></li>
               <li><a href="createteam.php">Create Team</a></li>
               <li><a href="createthunt.php">Create Hunt</a></li>
               <li><a href="signout.php">Sign out</a></li>
@@ -44,7 +44,7 @@ session_start ();
           <h1 class="logo">AR TS</h1>
       </div>
   </nav>
-    <section class="showcase-area" id="showcase">
+  <section class="showcase-area" id="showcase">
       <div class="showcase-container">
         <h1 class="main-title" id="home">Create your riddle!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
@@ -109,22 +109,32 @@ session_start ();
   </form>
 </div>
     </section>
+    
     <footer id="footer">
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
   <script>
-
-    function fireSweetAlert() {
-        Swal.fire(
-            'Warning!',
-            'All riddles are public for now!',
-            'warning'
-        )
+    window.onload = function mess() {//na allaksw name
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'first') { ?>
+          swal({
+          title:  'Warning!',
+          text: 'All riddles are public for now!',
+          type: 'warning',
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/CS569-WebApplication/createriddle.php?msg=null";
+        });
+        <?php }?>
     }
 
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
   <script src="js/number.js"></script>
   <script src="js/disablePreviousDates.js"></script>
+  
 </html>
