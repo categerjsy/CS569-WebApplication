@@ -105,6 +105,17 @@ session_start ();
               window.location.href = "/CS569-WebApplication/addriddles.php";
         });
         <?php }?>
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'teampart') { ?>
+          swal({
+          title: "Success!",
+          text: "Congratulations! You are a part of a team!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/CS569-WebApplication/homepage.php";
+        });
+        <?php }?>
     }
 
   </script>

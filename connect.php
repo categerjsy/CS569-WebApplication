@@ -57,8 +57,16 @@ session_start ();
 					 $my_user=$row["id_user"];
 				}
 				$_SESSION["id_user"] =  $my_user;
-
+                
+                if(isset($_SESSION['URL'])==NULL) {
 				header("location:homepage.php"); 	
+                }
+                else {
+                $url=$_SESSION['URL'];
+                
+                header("location:".$url); 	
+                }
+                 
 			} 
             else{
 				$error = "Username or Password is invalid";
