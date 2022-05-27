@@ -33,7 +33,7 @@ session_start ();
           </div>
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
-              <li><a href="#teams">Teams</a></li>
+              <li><a href='teams.php'>Teams</a></li>
               <li><a href="createriddle.php?msg=first">Create Riddle</a></li>
               <li><a href="createteam.php">Create Team</a></li>
               <li><a href="createthunt.php">Create Hunt</a></li>

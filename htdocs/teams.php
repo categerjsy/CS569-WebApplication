@@ -4,7 +4,7 @@ session_start ();
  if (isset($_SESSION['username'])==NULL){
   header('Location: index.php');
  }
-
+$id=$_SESSION["id_user"];
 ?>
 <html lang='en'>
   <head>
@@ -55,83 +55,31 @@ session_start ();
     <section id='about'>
     <div class='container'>
     <?php
-    $query = mysqli_query($conn, 'SELECT * FROM riddle');
+    $query = mysqli_query($conn, 'SELECT * FROM is_member AND id_team="');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-      $text=$row['text'];
-      $location_solution=$row['location_solution'];
-      $object=$row['object_AR'];
-      $infotext=$row['infotext'];
-      $points=$row['points'];
-      $id_riddle=$row['id_riddle'];
-    echo "<div class='row'>
-          <div class='col-25'>
-            <p>Riddle's Text</p>
-          </div>
-          <div class='col-75'>
-            $text
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's solution</p>
-          </div>
-          <div class='col-75'>
-            $location_solution
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's Object</p>
-          </div>
-          <div class='col-75'>
-            $object
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's Information</p>
-          </div>
-          <div class='col-75'>
-            $infotext
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's point</p>
-          </div>
-          <div class='col-75'>
-            $points
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-          </div>
-          <div class='col-75'>";
-          $thunt=$_SESSION['id_thunt'];
-          $q = "select * from has where id_riddle='$id_riddle' and id_thunt='$thunt'"; 
-								
-					// Execute the query and store the result set 
-					$result1 = mysqli_query($conn, $q); 
-								
-					if ($result1) { 
-					// it returns number of rows in the table. 
-					$row = mysqli_num_rows($result1); 
-          
-					if ($row) { 
-          echo "
-          <form method='post' action='has.php#form-anchor' id='form-anchor'>
-					<button type ='submit' name='remove_riddle'  class='button' value='$id_riddle'>
-					<span>Remove riddle</span>
-					</button>
-          </form>";
-          }else {
-          echo "
-          <form method='post' action='has.php#form-anchor' id='form-anchor'>
-					<button type ='submit' name='add_riddle'  class='button' value='$id_riddle'>
-					<span>Add riddle</span>
-					</button>
-          </form>";
-          }
+        $id_team=$row["id_team"];
+        $role=$row["role"];
+        
+        $querys = mysqli_query($conn, 'SELECT * FROM team AND id_team='$id_team'');
+          while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
+            $name=$rows["name"];
+        echo "<div class='row'>
+            <div class='col-25'>
+                <p>Role</p>
+            </div>
+            <div class='col-75'>
+                $role
+            </div>
+            </div>
+            <div class='row'>
+            <div class='col-25'>
+                <p>Team's name</p>
+            </div>
+            <div class='col-75'>
+                $name
+            </div>
+            </div>";
+            
         }
           echo "
           </div>
