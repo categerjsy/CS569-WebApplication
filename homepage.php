@@ -91,7 +91,7 @@ session_start ();
           timer: 2000,
           showConfirmButton: false
         }, function(){
-              window.location.href = "/CS569-WebApplication/generatelinkQR.php";
+              window.location.href = "/generatelinkQR.php";
         });
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
@@ -102,7 +102,7 @@ session_start ();
           timer: 2000,
           showConfirmButton: false
         }, function(){
-              window.location.href = "/CS569-WebApplication/addriddles.php";
+              window.location.href = "/addriddles.php";
         });
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'teampart') { ?>
@@ -113,7 +113,7 @@ session_start ();
           timer: 2000,
           showConfirmButton: false
         }, function(){
-              window.location.href = "/CS569-WebApplication/homepage.php";
+              window.location.href = "/homepage.php";
         });
         <?php }?>
     }

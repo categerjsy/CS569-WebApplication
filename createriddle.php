@@ -124,7 +124,7 @@ session_start ();
           timer: 2000,
           showConfirmButton: false
         }, function(){
-              window.location.href = "/CS569-WebApplication/createriddle.php?msg=null";
+              window.location.href = "/createriddle.php?msg=null";
         });
         <?php }?>
     }
