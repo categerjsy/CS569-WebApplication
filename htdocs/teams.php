@@ -93,40 +93,7 @@ $id=$_SESSION["id_user"];
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-  <script>
-function downloadURI(uri, name) {
-  var link = document.createElement('a');
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
-};
 
-window.onload = function ()
-{
-  console.log('onload');
-  let qrcode = new QRCode(document.getElementById('qrcode'),
-             {
-              text: 'https://localhost/CS569-WebApplication/participateTeam.php?id='+'<?php echo $_SESSION['id_team'] ?>',
-              width: 450,
-              height: 450,
-              colorDark : '#000000',
-              colorLight : '#ffffff',
-              correctLevel : QRCode.CorrectLevel.H
-            });  
-  setTimeout(
-    function ()
-    {
-        let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
-        downloadURI(dataUrl, 'qrcode.png');
-    }
-    ,1000);
-
-};
-    
-  </script>
  
   <script src='https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js'></script>
   <script src='js/number.js'></script>
