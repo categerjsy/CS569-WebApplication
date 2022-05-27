@@ -35,6 +35,3 @@ deploy:
       server: ftpupload.net
       username: epiz_31819650
       password: ${{ secrets.ftp_password }}
-     
-   
-        
