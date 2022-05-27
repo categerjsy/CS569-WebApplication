@@ -1,4 +1,0 @@
-Kate - vallidation messages gia idious kodikous
-        val message gia enimerosi oti egine i egrafi
-        val message gia apotuxia sundesis
-Κατε -θελει διορθωση το responsivness
