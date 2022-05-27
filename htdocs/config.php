@@ -11,7 +11,8 @@ $dbname = "epiz_31819650_treasure_hunt_db"; /* Database name */
 // $password = ""; /* Password */
 // $dbname = "treasure_hunt_db"; /* Database name */
 
-//14597
+
+
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 // Check connection
