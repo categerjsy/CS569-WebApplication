@@ -41,7 +41,6 @@ $id=$_SESSION["id_user"];
               <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
               <li><a href='createteam.php'>Create Team</a></li>
               <li><a href='createthunt.php'>Create Hunt</a></li>
-              <li><a href='treasurehunt.php'>Treasure hunt</a></li>
               <li><a href='signout.php'>Sign out</a></li>
           </ul>
           <h1 class='logo'>AR TS</h1>
@@ -49,7 +48,7 @@ $id=$_SESSION["id_user"];
   </nav>
     <section class='showcase-area' id='showcase'>
       <div class='showcase-container'>
-        <h1 class='main-title' id='home'>Let's see your teams!</h1>
+        <h1 class='main-title' id='home'>Let's see your treasure hunts!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
@@ -57,40 +56,38 @@ $id=$_SESSION["id_user"];
     <section id='about'>
     <div class='container'>
     </br></br>
-    <h2>Your teams:</h2>
+    <h2>Treasure hunt you had created:</h2>
     <?php
   
     $my_user=$_SESSION["id_user"] ;
 
-    $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user'");
+    $query = mysqli_query($conn, "SELECT * FROM creates_treasure_hunt WHERE id_user='$my_user'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-      $id_team=$row['id_team']; 
-      $role=$row['role']; 
-      $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
+      $treasure_hunt=$row['id_thunt']; 
+      $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
-        $teams_name=$rowt['name'];
+        $thunt_name=$rowt['name'];
       
       echo "<div class='row'>
             <div class='col-25'>
-              <p>Teams Name</p>
+              <p>Treasure hunt name</p>
             </div>
             <div class='col-75'>
-            $teams_name
+            $thunt_name
             </div>
             </div> 
             <div class='row'>
             <div class='col-25'>
-              <p>Role</p>
             </div>
             <div class='col-75'>
-            $role
+            <button name='add_riddle'  class='button' value='$id_thunt'>
             </div>
             </div><hr>";
       }
     }
     if (!$row) { 
       
-      echo "</br></br><h3>You are not a member of any team! :/<h3></br></br>";
+      echo "</br></br><h3>You have no treasure hunts! :/ <h3></br></br>";
     }
           
     ?>
