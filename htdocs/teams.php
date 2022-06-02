@@ -6,7 +6,7 @@ session_start ();
   header('Location: index.php');
  }
 $id=$_SESSION["id_user"];
-?>ang=
+?>
 <html l'en'>
   <head>
     <meta charset='UTF-8' />
