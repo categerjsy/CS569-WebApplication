@@ -82,6 +82,8 @@ $id=$_SESSION["id_user"];
             </div>
             <div class='col-75'>
             <button name='add_riddle'  class='button' value='$treasure_hunt'>
+            <span>Εdit Treasure hunt</span>
+			</button>
             </div>
             </div><hr>";
       }
