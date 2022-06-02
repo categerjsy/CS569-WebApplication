@@ -86,7 +86,7 @@ $id=$_SESSION["id_user"];
             </div><hr>";
       }
     }
-    if ($row) { 
+    if (!$row) { 
       echo "<h3>You are not a member of any team! :/<h3>";
     }
           
