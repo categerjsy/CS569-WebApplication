@@ -127,6 +127,17 @@ session_start ();
               window.location.href = "/addriddles.php";
         });
         <?php }?>
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'edhunt') { ?>
+          swal({
+          title: "Success!",
+          text: "You edit your treasurehut.That's amazing!Now lets change riddles!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/addriddles.php";
+        });
+        <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'teampart') { ?>
           swal({
           title: "Success!",
