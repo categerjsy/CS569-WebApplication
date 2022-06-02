@@ -54,7 +54,7 @@ $id=$_SESSION["id_user"];
 
     <section id='about'>
     <div class='container'>
-    <?php
+    <!-- <?php
     $query = mysqli_query($conn, 'SELECT * FROM is_member AND id_team="');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $id_team=$row["id_team"];
@@ -86,7 +86,7 @@ $id=$_SESSION["id_user"];
           </div>
           <hr>";
     }
-    ?>
+    ?> -->
     </div>
     </section>
     <footer id='footer'>
