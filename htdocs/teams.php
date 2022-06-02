@@ -48,15 +48,16 @@ $id=$_SESSION["id_user"];
   </nav>
     <section class='showcase-area' id='showcase'>
       <div class='showcase-container'>
-        <h1 class='main-title' id='home'>Create your team!</h1>
+        <h1 class='main-title' id='home'>Lets see your teams!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
 
     <section id='about'>
     <div class='container'>
+    <h2>Your teams:</h2>
     <?php
-
+  
     $my_user=$_SESSION["id_user"] ;
 
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user'");
@@ -84,6 +85,9 @@ $id=$_SESSION["id_user"];
             </div>
             </div><hr>";
       }
+    }
+    if ($row) { 
+      echo "<h3>You are not a member of any team! :/<h3>";
     }
           
     ?>
