@@ -68,7 +68,7 @@ $id_thunt=$_SESSION['id_thunt'];
                     <label for='thname'>Threasure Hunt Name</label>
                 </div>
                 <div class='col-75'>
-                    <input type='text' id='thname' name='thname' placeholder='$name' required>
+                    <input type='text' id='thname' name='thname' value='$name' required>
                 </div>
                 </div>
                 <div class='row'>
