@@ -47,22 +47,44 @@ session_start ();
       <div class="showcase-container">
         <h1 class="main-title" id="home">Be a pirate!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
-        <!--<a href="#food-menu" class="btn btn-primary">Menu</a>-->
       </div>
     </section>
     <section id="about">
       <div class="about-wrapper container">
         <div class="about-text">
-        
-          <p class="small">About Us</p>
-          <h2>Kati  na leei ti orama exoume :#</h2>
+          <p class="small">Treasure Hunt</p>
+          <h2> Creating an awesome treasure hunt</h2>
+          <h4>Build the ultimate treasure hunt!</h4>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ab
-            eos omnis, nobis dignissimos perferendis et officia architecto,
-            fugiat possimus eaque qui ullam excepturi suscipit aliquid optio,
-            maiores praesentium soluta alias asperiores saepe commodi
-            consequatur? Perferendis est placeat facere aspernatur!
+            1. Plan your route
           </p>
+          <p>
+            2. Scout out locations
+          </p>
+          <p>
+            3. Write and number the clues, and put them in numbered envelopes
+          </p>
+          <p>
+            4. Give yourself lots of time to plan
+          </p>
+          <p>
+            5. Set it up
+          </p>
+          <p>
+            6. Prepare for contingencies
+          </p>
+          <p>
+            7.Add in some random rewards to keep things interesting
+          </p>
+          <p>
+            8. Set ground rules in advance
+          </p>
+          <p>
+            9. Go with them
+          <p>
+            10. Have good time!
+          </p>
+
         </div>
         <div class="about-img">
           <img src="img/treasure-svgrepo-com.svg" alt="food" />

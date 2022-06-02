@@ -6,8 +6,8 @@ session_start ();
   header('Location: index.php');
  }
 $id=$_SESSION["id_user"];
-?>
-<html lang='en'>
+?>ang=
+<html l'en'>
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -55,6 +55,7 @@ $id=$_SESSION["id_user"];
 
     <section id='about'>
     <div class='container'>
+    </br></br>
     <h2>Your teams:</h2>
     <?php
   
@@ -92,6 +93,7 @@ $id=$_SESSION["id_user"];
     }
           
     ?>
+    </br></br>
     </div>
     </section>
     <footer id='footer'>
