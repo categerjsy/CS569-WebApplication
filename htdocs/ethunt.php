@@ -60,7 +60,7 @@ $id_thunt=$_SESSION['id_thunt'];
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $name=$row["name"];
         $datetime=$row["datetime"];
-        datetime
+        $dt=date('Y-m-d\TH:i', strtotime($datetime));
         echo 
             "<form action='edthunt.php' method='post'>
                 <div class='row'>
@@ -76,7 +76,7 @@ $id_thunt=$_SESSION['id_thunt'];
                     <label for='date'>Date</label>
                 </div>
                 <div class='col-75'>
-                <input type='datetime-local' id='datetime' name='datetime' value='$datetime' required>
+                <input type='datetime-local' id='datetime' name='datetime' value='$dt' required>
                 </div>
                 </div>
                 </div>

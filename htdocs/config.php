@@ -1,17 +1,17 @@
 <?php
 //For infinity Free host
-$host = "sql304.epizy.com"; /* Host name */
-$user = "epiz_31819650"; /* User */
-$password = "o9B50Rwn2uWXT"; /* Password */
-$dbname = "epiz_31819650_treasure_hunt_db"; /* Database name */
+// $host = "sql304.epizy.com"; /* Host name */
+// $user = "epiz_31819650"; /* User */
+// $password = "o9B50Rwn2uWXT"; /* Password */
+// $dbname = "epiz_31819650_treasure_hunt_db"; /* Database name */
  
 
 
 //For localhost
-// $host = "localhost"; /* Host name */
-// $user = "root"; /* User */
-// $password = ""; /* Password */
-// $dbname = "treasure_hunt_db"; /* Database name */
+$host = "localhost"; /* Host name */
+$user = "root"; /* User */
+$password = ""; /* Password */
+$dbname = "treasure_hunt_db"; /* Database name */
 
 
 
