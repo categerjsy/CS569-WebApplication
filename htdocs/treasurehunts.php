@@ -65,7 +65,7 @@ $id=$_SESSION["id_user"];
     $query = mysqli_query($conn, "SELECT * FROM creates_treasure_hunt WHERE id_user='$my_user'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $treasure_hunt=$row['id_thunt']; 
-      $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
+      $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$treasure_hunt'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $thunt_name=$rowt['name'];
       
@@ -81,12 +81,12 @@ $id=$_SESSION["id_user"];
             <div class='col-25'>
             </div>
             <div class='col-75'>
-            <button name='add_riddle'  class='button' value='$id_thunt'>
+            <button name='add_riddle'  class='button' value='$treasure_hunt'>
             </div>
             </div><hr>";
       }
     }
-    if (!$row) { 
+    if ($row) { 
       
       echo "</br></br><h3>You have no treasure hunts! :/ <h3></br></br>";
     }
