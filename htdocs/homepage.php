@@ -130,7 +130,7 @@ session_start ();
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'edhunt') { ?>
           swal({
           title: "Success!",
-          text: "You edit your treasurehut.That's amazing!Now lets change riddles!",
+          text: "You edited your treasure hunt.That's amazing!Now lets change your riddles!",
           type: "success",
           timer: 2000,
           showConfirmButton: false
