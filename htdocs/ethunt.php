@@ -1,13 +1,13 @@
 <?php
 include 'config.php';
 session_start ();
-
  if (isset($_SESSION['username'])==NULL){
   header('Location: index.php');
  }
-$id=$_SESSION["id_user"];
+$id_thunt=$_SESSION['id_thunt'];
+
 ?>
-<html l'en'>
+<html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -22,9 +22,6 @@ $id=$_SESSION["id_user"];
     />
     <link rel='stylesheet' href='css/st.css' />
     <link rel='stylesheet' href='css/form.css' />
-    <script type='text/javascript' src='http://static.runoob.com/assets/qrcode/qrcode.min.js'></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='css/button.css' />
   </head>
   <body>
     <nav class='navbar'>
@@ -49,63 +46,54 @@ $id=$_SESSION["id_user"];
   </nav>
     <section class='showcase-area' id='showcase'>
       <div class='showcase-container'>
-        <h1 class='main-title' id='home'>Let's see your treasure hunts!</h1>
+        <h1 class='main-title' id='home'>Edit your treasure hunt!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
 
     <section id='about'>
     <div class='container'>
-    </br></br>
-    <h2>Treasure hunt you had created:</h2>
+    
     <?php
-  
-    $my_user=$_SESSION["id_user"] ;
-
-    $query = mysqli_query($conn, "SELECT * FROM creates_treasure_hunt WHERE id_user='$my_user'");
+    
+    $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-      $treasure_hunt=$row['id_thunt']; 
-      $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$treasure_hunt'");
-      while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
-        $thunt_name=$rowt['name'];
-      
-      echo "<div class='row'>
-            <div class='col-25'>
-              <p>Treasure hunt name</p>
-            </div>
-            <div class='col-75'>
-            $thunt_name
-            </div>
-            </div> 
-            <div class='row'>
-            <div class='col-25'>
-            </div>
-            <div class='col-75'>
-            <form method='post' action='edithunt.php#form-anchor' id='form-anchor'>
-            <button name='thunt'  class='button' value='$treasure_hunt'>
-            <span>Εdit Treasure hunt</span>
-			</button>
-            </form>
-            </div>
-            </div><hr>";
-      }
+        $name=$row["name"];
+        $datetime=$row["datetime"];
+        datetime
+        echo 
+            "<form action='edthunt.php' method='post'>
+                <div class='row'>
+                <div class='col-25'>
+                    <label for='thname'>Threasure Hunt Name</label>
+                </div>
+                <div class='col-75'>
+                    <input type='text' id='thname' name='thname' placeholder='$name' required>
+                </div>
+                </div>
+                <div class='row'>
+                <div class='col-25'>
+                    <label for='date'>Date</label>
+                </div>
+                <div class='col-75'>
+                <input type='datetime-local' id='datetime' name='datetime' value='$datetime' required>
+                </div>
+                </div>
+                </div>
+                <div class='row'>
+                <input type='submit' value='Edit Treasure Hunt'>
+                </div>
+            </form>";
     }
-    if ($row) { 
-      
-      echo "</br></br><h3>You have no treasure hunts! :/ <h3></br></br>";
-    }
-          
-    ?>
-    </br></br>
-    </div>
+
+  ?>
+</div>
     </section>
     <footer id='footer'>
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-
- 
-  <script src='https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js'></script>
-  <script src='js/number.js'></script>
-  <script src='js/disablePreviousDates.js'></script>
+  
+   <script src='js/number.js'></script>
+   <script src='js/disablePreviousDates.js'></script>
 </html>
