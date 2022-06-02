@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 session_start ();
+
  if (isset($_SESSION['username'])==NULL){
   header('Location: index.php');
  }
@@ -54,39 +55,38 @@ $id=$_SESSION["id_user"];
 
     <section id='about'>
     <div class='container'>
-    <!-- <?php
-    $query = mysqli_query($conn, 'SELECT * FROM is_member AND id_team="');
+    <?php
+
+    $my_user=$_SESSION["id_user"] ;
+
+    $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-        $id_team=$row["id_team"];
-        $role=$row["role"];
-        
-        $querys = mysqli_query($conn, 'SELECT * FROM team AND id_team='$id_team'');
-          while ($rows = mysqli_fetch_array($querys, MYSQLI_ASSOC)) {
-            $name=$rows["name"];
-        echo "<div class='row'>
+      $id_team=$row['id_team']; 
+      $role=$row['role']; 
+      $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
+      while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
+        $teams_name=$rowt['name'];
+      
+      echo "<div class='row'>
             <div class='col-25'>
-                <p>Role</p>
+              <p>Teams Name</p>
             </div>
             <div class='col-75'>
-                $role
+            $teams_name
             </div>
-            </div>
+            </div> 
             <div class='row'>
             <div class='col-25'>
-                <p>Team's name</p>
+              <p>Role</p>
             </div>
             <div class='col-75'>
-                $name
+            $role
             </div>
-            </div>";
-            
-        }
-          echo "
-          </div>
-          </div>
-          <hr>";
+            </div><hr>";
+      }
     }
-    ?> -->
+          
+    ?>
     </div>
     </section>
     <footer id='footer'>
