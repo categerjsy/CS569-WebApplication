@@ -40,7 +40,7 @@ $id=$_SESSION["id_user"];
               <li><a href='teams.php'>Teams</a></li>
               <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
               <li><a href='createteam.php'>Create Team</a></li>
-              <li><a href='createthunt.php'>Create Hunt</a></li>
+              <li><a href='createthunts.php'>Create Hunt</a></li>
               <li><a href='signout.php'>Sign out</a></li>
           </ul>
           <h1 class='logo'>AR TS</h1>
