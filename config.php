@@ -1,12 +1,4 @@
 <?php
-//For infinity Free host
-// $host = "sql304.epizy.com"; /* Host name */
-// $user = "epiz_31819650"; /* User */
-// $password = "o9B50Rwn2uWXT"; /* Password */
-// $dbname = "epiz_31819650_treasure_hunt_db"; /* Database name */
- 
-
-
 
 
 //For 000webhost
@@ -15,9 +7,6 @@ $user = "id19040562_arthunt_user"; /* User */
 $password = "X8?+*k}WGou&Ccf@"; /* Password */
 $dbname = "id19040562_arthunt"; /* Database name */
  
-
-
-
 
 //For localhost
 // $host = "localhost"; /* Host name */
