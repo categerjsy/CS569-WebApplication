@@ -5,9 +5,10 @@ include 'config.php';
     $PassWord=$_REQUEST['passWord'];
     $checkQuery="SELECT * FROM user WHERE username='$userName' AND password='$PassWord'";
     $result=mysqli_query($conn,$checkQuery);
+    
     if(mysqli_num_rows($result)==1)
     {
-     echo 1;
+     echo $userName;
     }
      else
     {
