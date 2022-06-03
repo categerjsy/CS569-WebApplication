@@ -6,12 +6,19 @@
 // $dbname = "epiz_31819650_treasure_hunt_db"; /* Database name */
  
 
+
+
+
 //For 000webhost
 $host = "localhost"; /* Host name */
 $user = "id19040562_arthunt_user"; /* User */
 $password = "X8?+*k}WGou&Ccf@"; /* Password */
 $dbname = "id19040562_arthunt"; /* Database name */
  
+
+
+
+
 //For localhost
 // $host = "localhost"; /* Host name */
 // $user = "root"; /* User */
