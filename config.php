@@ -15,8 +15,6 @@ $dbname = "id19040562_arthunt"; /* Database name */
 // $dbname = "treasure_hunt_db"; /* Database name */
 
 
-
-
 $conn = mysqli_connect($host, $user, $password, $dbname);
 // Check connection
 if (!$conn) {
