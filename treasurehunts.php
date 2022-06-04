@@ -90,7 +90,7 @@ $id=$_SESSION["id_user"];
             </div><hr>";
       }
     }
-    if ($row) { 
+    if (!$row) { 
       
       echo "</br></br><h3>You have no treasure hunts! :/ <h3></br></br>";
     }
