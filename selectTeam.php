@@ -87,7 +87,7 @@ $id=$_SESSION["id_user"];
     
      }
      
-    if ($test==0) { 
+    if (!row) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
     echo "</form>";      
