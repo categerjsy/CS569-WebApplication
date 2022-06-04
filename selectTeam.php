@@ -64,7 +64,7 @@ $id=$_SESSION["id_user"];
     echo "<form action='partTh.php' method='post'>";
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
     
-    
+    $test=0;
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       echo "<select id='team' name='team'>";
       $id_team=$row['id_team']; 
@@ -74,6 +74,7 @@ $id=$_SESSION["id_user"];
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
         echo "<option value='$id_team'>$teams_name</option>";  
+        $test=1;
       }
       echo "</select>";	
       echo  
@@ -86,7 +87,7 @@ $id=$_SESSION["id_user"];
     
      }
      
-    if (!$row) { 
+    if ($test==0) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
     echo "</form>";      
