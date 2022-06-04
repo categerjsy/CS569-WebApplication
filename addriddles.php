@@ -137,17 +137,18 @@ session_start ();
         
           echo "
           </div>
-          <form action='https://arthunt.000webhostapp.com/generatelinkQRHunt.php;>
-            <button type ='submit' class='button'>
-                    <span>Sent participation to leaders!</span>
-              </button>
-          </form>
           </div>
           <hr>";
     }
     ?>
 
-
+<form action='https://arthunt.000webhostapp.com/generatelinkQRHunt.php;>
+  <button type ='submit' class='button'>
+    <span>Sent participation to leaders!</span>
+  </button>
+</form>
+</br>
+</br>
 
 
     
