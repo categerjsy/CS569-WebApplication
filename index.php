@@ -56,8 +56,8 @@
               <label for="password">Password:</label>
               <input type="password" name="password" id="password" required/>
             </div>
+            <label for="confirmPassword">Confirm Password:</label>
             <div class="input-field">
-              <label for="confirmPassword">Confirm Password:</label>
               <input type="password" name="cpassword" id="confirm_password" required/>
             </div>
             <span id='message'></span>
