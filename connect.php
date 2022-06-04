@@ -69,8 +69,8 @@ session_start ();
                  
 			} 
             else{
-				$error = "Username or Password is invalid";
-				echo "$error";
+				//$error = "Username or Password is invalid";
+				//echo "$error";
 				header("Location: index.php?msg=wrong");
 			
 			}
