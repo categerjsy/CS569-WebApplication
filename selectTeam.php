@@ -61,7 +61,7 @@ $id=$_SESSION["id_user"];
     <?php
   
     $my_user=$_SESSION["id_user"] ;
-    <form action="partTh.php" method="post">
+    echo "<form action='partTh.php' method='post'>";
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
     echo "<select id='team' name='team'>";
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
