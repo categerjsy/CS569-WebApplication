@@ -64,24 +64,20 @@ $id=$_SESSION["id_user"];
     echo "<form action='partTh.php' method='post'>";
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
     
-    if ($row) {
-      echo "<select id='team' name='team'>";
+    
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+      echo "<select id='team' name='team'>";
       $id_team=$row['id_team']; 
-      if (!$row) {
-        echo "<select id='team' name='team'>";
-      }
+
       $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
 
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
         echo "<option value='$id_team'>$teams_name</option>";  
       }
-      
+      echo "</select>";	
      }
-     if (!$row) {
-     echo "</select>";	
-     }
+     
     echo  
         "</br>
         </br>
