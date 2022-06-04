@@ -63,19 +63,20 @@ $id=$_SESSION["id_user"];
     $my_user=$_SESSION["id_user"] ;
 
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
-
+    echo "<select id='exam' name='exam'>";
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $id_team=$row['id_team']; 
       $role=$row['role']; 
-      echo "<select id='exam' name='exam'>";
+     
       $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
-      
+
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
         echo "<option value='$teams_name'>$teams_name</option>";  
       }
-      echo "</select>";	
+      
      }
+     echo "</select>";	
     if ($rowt) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
