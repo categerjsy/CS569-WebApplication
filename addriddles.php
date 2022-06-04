@@ -140,12 +140,17 @@ session_start ();
           <hr>";
     }
     ?>
-
+<div class='col-25'>
+</div>
+<div class='col-25'>
+</div>
+<div class='col-25'>
 <form action="https://arthunt.000webhostapp.com/generatelinkQRHunt.php">
   <button type ='submit' class='button'>
 					<span>Sent participation to leaders!</span>
 		</button>
 </form>
+</div>
     
     </div>
     </section>
