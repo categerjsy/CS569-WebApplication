@@ -77,7 +77,7 @@ $id=$_SESSION["id_user"];
      }
      echo "</select>";	
     echo  
-        "<div class='row'>
+        "</br><div class='row'>
           <input type='submit' value='Participate'>
         </div>";
     if ($rowt) { 
