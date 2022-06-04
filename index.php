@@ -22,12 +22,13 @@
                 print "<p style='color: green;'>Great you have an account.Sign In!</p>";
             }
             ?>
-            <label for="username">Username:</label>
+
             <div class="input-field">
+              <label for="username">Username:</label>
               <input type="text" name="username" required/>
             </div>
-            <label for="password">Password:</label>
             <div class="input-field">
+              <label for="password">Password:</label>
               <input type="password" name="password" required/>
             </div>
             <input type="submit" name='signin' value="Login" class="btn solid" />
@@ -35,28 +36,28 @@
 
           <form action="connect.php" method="post" class="sign-up-form" >
             <h2 class="title">Sign up</h2>
-            <label for="username">Username:</label>
             <div class="input-field">
+              <label for="username">Username:</label>
               <input type="text" name="username" id="username" required/>
             </div>
-            <label for="email">Email:</label>
             <div class="input-field">
+              <label for="email">Email:</label>
               <input type="email" name="email" id="email" required/>
             </div>
+            <div class="input-field">
             <label for="fullName">Full name:</label>
-            <div class="input-field">
-            <input type="text" name="fullName" id="fullName" required/>
+              <input type="text" name="fullName" id="fullName" required/>
             </div>
-            <label for="dateOfBirth">Date of Birth:</label>
             <div class="input-field">
-            <input type="date"  name="dateOfBirth" value="2022-04-18" min="1928-02-20" max="<?php echo date('Y-m-d');?>">
+              <label for="dateOfBirth">Date of Birth:</label>
+             <input type="date"  name="dateOfBirth" value="2022-04-18" min="1928-02-20" max="<?php echo date('Y-m-d');?>">
             </div>
-            <label for="password">Password:</label>
             <div class="input-field">
+              <label for="password">Password:</label>
               <input type="password" name="password" id="password" required/>
             </div>
-            <label for="confirmPassword">Confirm Password:</label>
             <div class="input-field">
+              <label for="confirmPassword">C. Password:</label>
               <input type="password" name="cpassword" id="confirm_password" required/>
             </div>
             <span id='message'></span>
