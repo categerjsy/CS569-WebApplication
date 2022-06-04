@@ -54,7 +54,7 @@ session_start ();
     </section>
 
     <section id='about'>
-    < class='container'>
+    <div class='container'>
     <?php
     $query = mysqli_query($conn, 'SELECT * FROM riddle');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
