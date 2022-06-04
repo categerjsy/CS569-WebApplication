@@ -76,15 +76,16 @@ $id=$_SESSION["id_user"];
         echo "<option value='$id_team'>$teams_name</option>";  
       }
       echo "</select>";	
-     }
-     
-    echo  
+      echo  
         "</br>
         </br>
         </br>
         <div class='row'>
           <input type='submit' value='Participate'>
         </div>";
+    
+     }
+     
     if ($row) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
