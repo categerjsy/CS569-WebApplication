@@ -54,7 +54,7 @@ session_start ();
     </section>
 
     <section id='about'>
-    <div class='container'>
+    < class='container'>
     <?php
     $query = mysqli_query($conn, 'SELECT * FROM riddle');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -141,13 +141,13 @@ session_start ();
     }
     ?>
 
-<div class='col-25'>
+
 <form action="https://arthunt.000webhostapp.com/generatelinkQRHunt.php">
   <button type ='submit' class='button'>
 					<span>Sent participation to leaders!</span>
 		</button>
 </form>
-</div>
+
     
     </div>
     </section>
