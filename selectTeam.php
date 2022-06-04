@@ -79,7 +79,7 @@ $id=$_SESSION["id_user"];
     if ($rowt) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
-    </form>      
+    echo "</form>";      
     ?>
     </br></br>
     </div>
