@@ -76,6 +76,10 @@ $id=$_SESSION["id_user"];
       
      }
      echo "</select>";	
+    echo  
+        "<div class='row'>
+          <input type='submit' value='Participate'>
+        </div>";
     if ($rowt) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
