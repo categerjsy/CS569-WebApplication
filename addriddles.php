@@ -134,13 +134,14 @@ session_start ();
           </form>";
           }
         }
-        echo "<form action='https://arthunt.000webhostapp.com/generatelinkQRHunt.php;>
-          <button type ='submit' class='button'>
-                  <span>Sent participation to leaders!</span>
-            </button>
-        </form>";
+        
           echo "
           </div>
+          <form action='https://arthunt.000webhostapp.com/generatelinkQRHunt.php;>
+            <button type ='submit' class='button'>
+                    <span>Sent participation to leaders!</span>
+              </button>
+          </form>
           </div>
           <hr>";
     }
