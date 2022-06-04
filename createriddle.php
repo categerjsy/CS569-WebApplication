@@ -99,6 +99,7 @@ session_start ();
         <label for="number">Points for treasure hunt</label>
       </div>
       <!-- <div class="col-75"> -->
+      </br>
         <div class="quantity">
         <input type="number" name="number" min="1" step="1" value="1">
         </div>

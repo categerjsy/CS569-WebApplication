@@ -45,7 +45,7 @@ session_start ();
   </nav>
     <section class="showcase-area" id="showcase">
       <div class="showcase-container">
-        <h1 class="main-title" id="home">Create your team!</h1>
+        <h1 class="main-title" id="home">Create your Treasure hunt!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
