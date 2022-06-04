@@ -140,6 +140,13 @@ session_start ();
           <hr>";
     }
     ?>
+
+<form action="https://arthunt.000webhostapp.com/generatelinkQRHunt.php">
+  <button type ='submit' class='button'>
+					<span>Sent participation to leaders!</span>
+		</button>
+</form>
+    
     </div>
     </section>
     <footer id='footer'>
