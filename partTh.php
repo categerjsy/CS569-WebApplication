@@ -7,7 +7,7 @@ unset($_SESSION["part_id"]);
 
 $team=$_POST["team"];
 
-$sql= "INSERT INTO participate (id_hunt,id_team)
+$sql= "INSERT INTO participate (id_thunt,id_team)
     VALUES ('$id_hunt','$team')";
 mysqli_query($conn,$sql);
 
