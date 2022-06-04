@@ -127,6 +127,17 @@ session_start ();
               window.location.href = "/addriddles.php";
         });
         <?php }?>
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == ' huntpart') { ?>
+          swal({
+          title: "Success!",
+          text: "Your team is ready to participate to a treasure hunt.That's amazing!Now inform your team!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/addriddles.php";
+        });
+        <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'edhunt') { ?>
           swal({
           title: "Success!",

@@ -61,18 +61,17 @@ $id=$_SESSION["id_user"];
     <?php
   
     $my_user=$_SESSION["id_user"] ;
-
+    <form action="partTh.php" method="post">
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
-    echo "<select id='exam' name='exam'>";
+    echo "<select id='team' name='team'>";
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $id_team=$row['id_team']; 
-      $role=$row['role']; 
-     
+
       $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
 
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
-        echo "<option value='$teams_name'>$teams_name</option>";  
+        echo "<option value='$id_team'>$teams_name</option>";  
       }
       
      }
@@ -80,7 +79,7 @@ $id=$_SESSION["id_user"];
     if ($rowt) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
-          
+    </form>      
     ?>
     </br></br>
     </div>
