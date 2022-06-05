@@ -21,6 +21,7 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/disclaimer.css" />
   </head>
   <body>
     <nav class="navbar">

@@ -21,6 +21,7 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel='stylesheet' href='sweetalert.css'>
+    <link rel="stylesheet" href="css/disclaimer.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
   <body>

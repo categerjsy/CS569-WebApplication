@@ -22,6 +22,7 @@ $id=$_SESSION["id_user"];
     />
     <link rel='stylesheet' href='css/st.css' />
     <link rel='stylesheet' href='css/form.css' />
+    <link rel="stylesheet" href="css/disclaimer.css" />
     <script type='text/javascript' src='http://static.runoob.com/assets/qrcode/qrcode.min.js'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='css/button.css' />
