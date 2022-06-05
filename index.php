@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+      .disclaimer { display: none;}
+    </style>
     <title>AR Treasure Hunt</title>
   </head>
   <body>
