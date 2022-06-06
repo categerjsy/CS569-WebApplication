@@ -90,7 +90,22 @@ session_start ();
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-
+  <script>
+    window.onload = function mess() {//na allaksw name
+      
+        <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'tryagain') { ?>
+        swal({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'A team has this name, try a new one!',
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/createteam.php";
+        });
+        <?php }?>
+  
+    }
+    </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/number.js"></script>
 </html>

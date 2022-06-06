@@ -5,6 +5,11 @@ session_start ();
 $teamname=$_POST['teamname'];
 $number=$_POST['number'];
 
+$query = mysqli_query($conn,"select * from team where name='$teamname'");
+$rt = mysqli_num_rows($query);
+if($rt==1){
+    header("Location: createteam.php?msg=tryagain");
+}
 $sql = "INSERT INTO team (name,numberPlayers)
 VALUES ('$teamname','$number')";
 mysqli_query($conn,$sql);
