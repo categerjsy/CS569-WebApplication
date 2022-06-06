@@ -55,8 +55,7 @@ session_start ();
 				$id = mysqli_query($conn,"select id_user from user where password='$password' AND username='$username'");
 				 while ($row = mysqli_fetch_array($id, MYSQLI_ASSOC)) {
 					$my_user=$row["id_user"];
-                    $birth=$row["birth"];
-                    $dateOfBirth = "15-06-1995";
+                    $dateOfBirth = $row["birth"];
                     $today = date("Y-m-d");
                     $diff = date_diff(date_create($dateOfBirth), date_create($today));
                     $_SESSION["age"]=$diff->format('%y');
