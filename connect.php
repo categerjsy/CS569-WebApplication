@@ -58,7 +58,7 @@ session_start ();
                     $dateOfBirth=$row["birth"];
                     echo "eleos";
                     
-                    echo $dateOfBirth->format('Y-m-d');
+                    echo $row["birth"];
                     $today = date("Y-m-d");
                     $diff = date_diff(date_create($dateOfBirth), date_create($today));
                     $_SESSION["age"]=$diff->format('%y');
