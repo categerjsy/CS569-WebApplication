@@ -6,7 +6,7 @@ $username=$_GET["username"];
  $idQuery="SELECT * FROM user WHERE username='$username'";
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
     $id_user=$row["id_user"];
-
+    echo $id_user;  
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$id_user' AND role='leader'");
     while ($rowi = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $id_team=$rowi['id_team']; 
