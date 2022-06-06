@@ -98,7 +98,6 @@ session_start ();
           icon: 'error',
           title: 'Oops...',
           text: 'A team has this name, try a new one!',
-          showConfirmButton: false
         }, function(){
               window.location.href = "/createteam.php";
         });
