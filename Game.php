@@ -3,7 +3,7 @@ include 'config.php';
 //Logiki gia to url na exei to username
 $username=$_GET["username"];
 
-$idQuery== mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
+$idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
     $id_user=$row["id_user"];
 
