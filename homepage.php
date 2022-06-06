@@ -36,11 +36,11 @@ session_start ();
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
               <li><a href='teams.php'>Teams</a></li>
-              <li><a href="createriddle.php?msg=first">Create Riddle</a></li>
               <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
-              echo "<li><a href='createteam.php'>Create Team</a></li>
+              echo "<li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
+                    <li><a href='createteam.php'>Create Team</a></li>
                     <li><a href='createthunt.php'>Create Hunt</a></li>";
               }
               ?>
@@ -61,6 +61,8 @@ session_start ();
       <div class="about-wrapper container">
         <div class="about-text">
           <p class="small">Treasure Hunt</p>
+          <?php 
+              echo $diff; ?>
           <h2>Build the ultimate treasure hunt!</h2>
           <p>
             1. Plan your route
