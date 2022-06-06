@@ -14,8 +14,9 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
       $queryt = mysqli_query($conn, "SELECT * FROM participate WHERE id_team='$id_team'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $id_thunt=$rowt['id_thunt'];
-        $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
-        while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
+        $queryth = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
+        while ($rowth = mysqli_fetch_array($queryth, MYSQLI_ASSOC)) {
+        $game_name=$rowth["name"];
         array_push($games, $game_name);  
         }
         
