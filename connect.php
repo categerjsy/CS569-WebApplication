@@ -56,6 +56,7 @@ session_start ();
 				 while ($row = mysqli_fetch_array($id, MYSQLI_ASSOC)) {
 					$my_user=$row["id_user"];
                     $dateOfBirth=$row["birth"];
+                    echo $dateOfBirth;
                     $today = date("Y-m-d");
                     $diff = date_diff(date_create($dateOfBirth), date_create($today));
                     $_SESSION["age"]=$diff->format('%y');
@@ -64,11 +65,11 @@ session_start ();
 				$_SESSION["id_user"] =  $my_user;
                 
                 if(isset($_SESSION['URL'])==NULL) {
-				header("location:homepage.php"); 	
+				//header("location:homepage.php"); 	
                 }
                 else {
                 $url=$_SESSION['URL'];
-                header("location:".$url); 	
+                //header("location:".$url); 	
                 }
                  
 			} 
