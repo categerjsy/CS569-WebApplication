@@ -56,12 +56,14 @@ session_start ();
 				 while ($row = mysqli_fetch_array($id, MYSQLI_ASSOC)) {
 					$my_user=$row["id_user"];
                     $dateOfBirth=$row["birth"];
-                    echo "eleos";
+                    echo $dateOfBirth;
                     
                     echo $dateOfBirth->format('Y-m-d');
                     $today = date("Y-m-d");
                     $diff = date_diff(date_create($dateOfBirth), date_create($today));
                     $_SESSION["age"]=$diff->format('%y');
+                    echo "Age:";
+                    echo $_SESSION["age"];
                    
 				}
 				$_SESSION["id_user"] =  $my_user;
