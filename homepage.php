@@ -55,13 +55,11 @@ session_start ();
       <div class="about-wrapper container">
         <div class="about-text">
           <p class="small">Treasure Hunt</p>
-          
+          <h2>Build the ultimate treasure hunt!</h2>
           <?php 
           $diff=$_SESSION["age"];
-          echo 'Your age is '.$diff;
+          echo $diff;
           ?>
-
-          <h2>Build the ultimate treasure hunt!</h2>
           <p>
             1. Plan your route
           </p>
