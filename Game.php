@@ -2,11 +2,11 @@
 include 'config.php';
 //Logiki gia to url na exei to username
 $username=$_GET["username"];
-echo "<h1>$username</h1>";
- $idQuery="SELECT * FROM user WHERE username='$username'";
+
+$idQuery== mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
     $id_user=$row["id_user"];
-    echo "<h1> $id_user</h1>";
+
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$id_user' AND role='leader'");
     while ($rowi = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $id_team=$rowi['id_team']; 
