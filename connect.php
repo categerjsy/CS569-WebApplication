@@ -62,15 +62,14 @@ session_start ();
                    
 				}
 				$_SESSION["id_user"] =  $my_user;
-                echo "Age:";
-                echo $_SESSION["age"];
+
                 
                 if(isset($_SESSION['URL'])==NULL) {
-				//header("location:homepage.php"); 	
+				header("location:homepage.php"); 	
                 }
                 else {
                 $url=$_SESSION['URL'];
-                //header("location:".$url); 	
+                header("location:".$url); 	
                 }
                  
 			} 

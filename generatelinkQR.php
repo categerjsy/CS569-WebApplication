@@ -36,9 +36,15 @@ session_start ();
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
               <li><a href='teams.php'>Teams</a></li>
-              <li><a href="createriddle.php?msg=first">Create Riddle</a></li>
-              <li><a href="createteam.php">Create Team</a></li>
-              <li><a href="createthunt.php">Create Hunt</a></li>
+              <?php 
+              $diff=$_SESSION["age"];
+              if($diff>14){
+              echo "<li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
+                    <li><a href='createteam.php'>Create Team</a></li>
+                    <li><a href='createthunt.php'>Create Hunt</a></li>";
+              }
+              ?>
+              
               <li><a href='treasurehunts.php'>Treasure hunt</a></li>
               <li><a href="signout.php">Sign out</a></li>
           </ul>
