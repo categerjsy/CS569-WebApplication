@@ -2,7 +2,7 @@
 include 'config.php';
 //Logiki gia to url na exei to username
 $username=$_GET["username"];
-$teams = array();
+$games = array();
 $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
     $id_user=$row["id_user"];
@@ -11,10 +11,15 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
     while ($rowi = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $id_team=$rowi['id_team']; 
 
-      $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
+      $queryt = mysqli_query($conn, "SELECT * FROM participate WHERE id_team='$id_team'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
-        $teams_name=$rowt['name'];
-        array_push($teams, $teams_name);  
+        $id_thunt=$rowt['id_thunt'];
+        $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
+        while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
+        array_push($games, $game_name);  
+        }
+        
+       
       }
 
  }
@@ -22,6 +27,6 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
 }   
 
 
-print_r($teams);
+print_r($games);
 
 ?>
