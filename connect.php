@@ -23,18 +23,18 @@ session_start ();
         if($password==$cpassword) {
             if($ru==1||$re==1){
                 echo "Username or email taken";
-                //header("Location: index.php");
+                header("Location: index.php");
             }else{
                 $sql = "INSERT INTO user (birth,username,password,fullname,email)
 		                VALUES (' $birth_for_database','$username','$password','$fullname','$email')";
             }
 
 		mysqli_query($conn,$sql);
-        //header("Location: index.php?msg=up");
+        header("Location: index.php?msg=up");
         }
         else{
             echo "Password do not match";
-            //header("Location: index.php");
+            header("Location: index.php");
         }
 	}
 
@@ -64,18 +64,16 @@ session_start ();
 				$_SESSION["id_user"] =  $my_user;
                 
                 if(isset($_SESSION['URL'])==NULL) {
-				//header("location:homepage.php"); 	
+				header("location:homepage.php"); 	
                 }
                 else {
                 $url=$_SESSION['URL'];
-                
-                //header("location:".$url); 	
+                header("location:".$url); 	
                 }
                  
 			} 
             else{
-				//header("Location: index.php?msg=wrong");
-			
+			header("Location: index.php?msg=wrong");
 			}
       
         }
