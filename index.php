@@ -15,15 +15,6 @@
         <div class="signin-signup">
           <form action="connect.php" method="post" class="sign-in-form">
             <h2 class="title">Sign in</h2>
-            <?php
-              if (isset($_GET["msg"]) && $_GET["msg"] == 'wrong') {
-                  print "<p style='color: red;'>Something went wrong! Please try again.</p>";
-              }
-              if (isset($_GET["msg"]) && $_GET["msg"] == 'up') {
-                print "<p style='color: green;'>Great you have an account.Sign In!</p>";
-            }
-            ?>
-
             <div class="input-field">
               <label for="username">Username:</label>
               <input type="text" name="username" required/>
@@ -94,7 +85,38 @@
         </div>
       </div>
     </div>
-    <script src="js/password.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+    window.onload = function mess() {
+        <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'wrong') { ?>
+        swal({
+          title: "Oops!",
+          text: "Something went wrong! Please try again.",
+          type: "error",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/index.php";
+        });
+        <?php }?>
+        <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'up') { ?>
+          swal({
+          title: "Success!",
+          text: "Great you have an account.Sign In!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/index.php";
+        });
+        <?php }?>
+    }
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script src="js/password.js"></script>
+  <script src="js/app.js"></script>
   </body>
 </html>
