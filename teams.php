@@ -7,7 +7,7 @@ session_start ();
  }
 $id=$_SESSION["id_user"];
 ?>
-<html l'en'>
+<html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
@@ -73,7 +73,7 @@ $id=$_SESSION["id_user"];
       
       echo "<div class='row'>
             <div class='col-25'>
-              <p>Teams Name</p>
+              <p>Team's Name</p>
             </div>
             <div class='col-75'>
             $teams_name
