@@ -95,9 +95,11 @@ session_start ();
       
         <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'tryagain') { ?>
         swal({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'A team has this name, try a new one!',
+          title: "Oops...!",
+          text: "A team has this name, try a new one!",
+          type: "error",
+          timer: 2000,
+          showConfirmButton: false
         }, function(){
               window.location.href = "/createteam.php";
         });
