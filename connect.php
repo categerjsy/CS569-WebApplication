@@ -52,7 +52,7 @@ session_start ();
             if($rowsp == 1) {
 				$_SESSION["username"] = $username;
 
-				$id = mysqli_query($conn,"select id_user from user where password='$password' AND username='$username'");
+				$id = mysqli_query($conn,"select * from user where password='$password' AND username='$username'");
 				 while ($row = mysqli_fetch_array($id, MYSQLI_ASSOC)) {
 					$my_user=$row["id_user"];
                     $dateOfBirth=$row["birth"];
