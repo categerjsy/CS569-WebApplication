@@ -21,6 +21,7 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
 
 }   
 
-echo $teams;
+
+print_r($teams);
 
 ?>
