@@ -95,7 +95,7 @@ $id=$_SESSION["id_user"];
           <input type='submit' value='Participate'>
         </div>";
      
-    if (!$row) { 
+    if ($row) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
     echo "</form>";      
