@@ -66,7 +66,7 @@ $id=$_SESSION["id_user"];
     </br></br>
     <h2>Your teams:</h2>
     <?php
-  
+    $test=0;
     $my_user=$_SESSION["id_user"] ;
     echo "<form action='partTh.php' method='post'>";
     echo "<select id='team' name='team'>";
@@ -81,6 +81,7 @@ $id=$_SESSION["id_user"];
 
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
+        $test=1;
         echo "<option value='$id_team'>$teams_name</option>";  
       }
       
@@ -95,7 +96,7 @@ $id=$_SESSION["id_user"];
           <input type='submit' value='Participate'>
         </div>";
      
-    if ($rowt) { 
+    if ($test==0) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
     echo "</form>";      
