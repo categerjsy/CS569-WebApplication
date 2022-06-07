@@ -2,7 +2,7 @@
 include 'config.php';
 //Logiki gia to url na exei to username
 $username=$_GET["username"];
-$games = array();
+
 $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
     $id_user=$row["id_user"];
@@ -17,7 +17,7 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
         $queryth = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
         while ($rowth = mysqli_fetch_array($queryth, MYSQLI_ASSOC)) {
         $game_name=$rowth["name"];
-        array_push($games, $game_name);  
+        echo $game_name;
         }
         
        
@@ -28,6 +28,6 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
 }   
 
 
-print_r($games);
+
 
 ?>
