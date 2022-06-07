@@ -93,7 +93,7 @@ $id=$_SESSION["id_user"];
      }
      if($test==1){
      echo "</select>";
-     }	
+
       echo  
         "</br>
         </br>
@@ -101,7 +101,7 @@ $id=$_SESSION["id_user"];
         <div class='row'>
           <input type='submit' value='Participate'>
         </div>";
-     
+     }	
     if ($test==0) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
     }
