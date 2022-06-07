@@ -68,26 +68,32 @@ $id=$_SESSION["id_user"];
     <?php
     $test=0;
     $my_user=$_SESSION["id_user"] ;
+    $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'"); 
+    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+      $test=1;
+    }
+    if($test==1){
     echo "<form action='partTh.php' method='post'>";
     echo "<select id='team' name='team'>";
+    }
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user' AND role='leader'");
     
     
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-     
       $id_team=$row['id_team']; 
 
       $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
 
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
-        $test=1;
         echo "<option value='$id_team'>$teams_name</option>";  
       }
       
     
      }
-     echo "</select>";	
+     if($test==1){
+     echo "</select>";
+     }	
       echo  
         "</br>
         </br>
