@@ -18,6 +18,7 @@ $idQuery=mysqli_query($conn,"SELECT * FROM user WHERE username='$username'");
         while ($rowth = mysqli_fetch_array($queryth, MYSQLI_ASSOC)) {
         $game_name=$rowth["name"];
         echo $game_name;
+        echo "*";
         }
         
        
