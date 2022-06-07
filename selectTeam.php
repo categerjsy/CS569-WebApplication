@@ -83,7 +83,10 @@ $id=$_SESSION["id_user"];
         $teams_name=$rowt['name'];
         echo "<option value='$id_team'>$teams_name</option>";  
       }
-      echo "</select>";	
+      
+    
+     }
+     echo "</select>";	
       echo  
         "</br>
         </br>
@@ -91,8 +94,6 @@ $id=$_SESSION["id_user"];
         <div class='row'>
           <input type='submit' value='Participate'>
         </div>";
-    
-     }
      
     if (!$row) { 
       echo "</br></br><h3>You are not a leader of any team! :/<h3></br></br>";
