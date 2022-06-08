@@ -62,7 +62,7 @@ $thunt=$_SESSION["th"];
     </section>
 
     <section id="about">
-    <div class='container' id="myDIV">
+    <div class='container'>
     <?php
      $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
      while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -153,7 +153,7 @@ $thunt=$_SESSION["th"];
 window.onload = function ()
 {
   console.log('onload');
-  let qrcode = new QRCode(document.getElementByClassName("qrcode"),
+  let qrcode = new QRCode(document.getElementByClass("qrcode"),
              {
               text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
               width: 450,
@@ -165,8 +165,7 @@ window.onload = function ()
   setTimeout(
     function ()
     {
-      var x = document.getElementById("myDIV");
-        let dataUrl = x.querySelector('.qrcode').querySelector('img').src;
+        let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
         downloadURI(dataUrl, 'qrcode.png');
     }
     ,1000);
