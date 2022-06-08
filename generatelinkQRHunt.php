@@ -87,8 +87,8 @@ session_start ();
     </div>
     <div class="row">
     </div>
-    <form method='post' action='codesRiddles.php'>
-					<button type ='submit' name='thunt'  class='button' value='<?php echo $thunt; ?>'>
+    <form method='post' action='qrRiddles'>
+					<button type ='submit' name='thunt'  class='button' value='<?php echo $thunt ?>'>
         <span>Give me the QRCodes of riddles!</span>
       </button>
     </form>
