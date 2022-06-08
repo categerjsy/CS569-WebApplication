@@ -123,7 +123,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div id='qrcode' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
+            <div class='qrcode' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
             </div>
         </div>
             </div>
@@ -153,7 +153,7 @@ $thunt=$_SESSION["th"];
 window.onload = function ()
 {
   console.log('onload');
-  let qrcode = new QRCode(document.getElementById("qrcode"),
+  let qrcode = new QRCode(document.getElementByClassName("qrcode"),
              {
               text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
               width: 450,
@@ -162,13 +162,13 @@ window.onload = function ()
               colorLight : "#ffffff",
               correctLevel : QRCode.CorrectLevel.H
             });  
-  setTimeout(
-    function ()
-    {
-        let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
-        downloadURI(dataUrl, 'qrcode.png');
-    }
-    ,1000);
+  // setTimeout(
+  //   function ()
+  //   {
+  //       let dataUrl = document[0].querySelector('#qrcode').querySelector('img').src;
+  //       downloadURI(dataUrl, 'qrcode.png');
+  //   }
+  //   ,1000);
 
 };
     
