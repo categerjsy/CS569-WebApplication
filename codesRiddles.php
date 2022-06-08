@@ -5,7 +5,7 @@ session_start ();
   header("Location: index.php");
  }
 
-$thunt=$_GET["id"];
+$thunt=$_POST["thunt"];
 ?>
 <html lang="en">
   <head>
@@ -62,7 +62,7 @@ $thunt=$_GET["id"];
 
     <section id="about">
     <div class='container'>
-    <?php
+    <!-- <?php
     $query = mysqli_query($conn, 'SELECT * FROM has WHERE id_thunt='$thunt'');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $riddle=$row["id_riddle"];
@@ -131,7 +131,7 @@ $thunt=$_GET["id"];
         }
     }
     ?>
-    </div>
+    </div> -->
 
     </section>
     <footer id="footer">
