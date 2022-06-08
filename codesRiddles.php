@@ -62,7 +62,7 @@ $thunt=$_SESSION["th"];
     </section>
 
     <section id="about">
-    <div class='container'>
+    <div class='container' id="myDIV">
     <?php
      $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
      while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -165,7 +165,8 @@ window.onload = function ()
   setTimeout(
     function ()
     {
-        let dataUrl = document.querySelector('.qrcode').querySelector('img').src;
+      var x = document.getElementById("myDIV");
+        let dataUrl = x.querySelector('.qrcode').querySelector('img').src;
         downloadURI(dataUrl, 'qrcode.png');
     }
     ,1000);
