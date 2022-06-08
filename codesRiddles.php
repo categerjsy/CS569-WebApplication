@@ -137,6 +137,13 @@ $thunt=$_SESSION["th"];
      ?>
     </div>
 
+
+
+    <input id="text" type="text" value="https://stackoverflow.com" style="width:80%" /><br />
+<div id="qrcode"></div>
+
+<a id='qrdl' hidden>Download</a>
+
     </section>
     <footer id="footer">
       <h2>AR Treasure Hunt &copy; </h2>
