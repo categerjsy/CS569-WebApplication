@@ -120,7 +120,7 @@ $thunt=$_SESSION["th"];
           <div class='col-75'>
           <div class='row'>
             <div class='col-25'>
-            <p>Please sent this QRCode to your team!</p>
+            <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
             <div id='qrcode' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
