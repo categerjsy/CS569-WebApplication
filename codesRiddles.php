@@ -64,6 +64,7 @@ $thunt=$_SESSION["th"];
     <section id="about">
     <div class='container'>
     <?php
+    $Qrcodes=array();
      $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
      while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
          $riddle=$row["id_riddle"];
@@ -75,6 +76,7 @@ $thunt=$_SESSION["th"];
         $infotext=$rowr['infotext'];
         $points=$rowr['points'];
         $link=$rowr['riddle_link'];
+        array_push($Qrcodes,$link);
         echo "<div class='row'>
           <div class='col-25'>
             <p>Riddle's Text</p>
@@ -125,7 +127,6 @@ $thunt=$_SESSION["th"];
             </div>
             <div class='col-75'>
             <div class='qrCode' data-qrcodeval='$link'></div> 
-            <script>downloadURI($link, 'qrcode.png');</script>
             </div>
         </div>
             </div>
@@ -212,6 +213,10 @@ window.onload = function ()
   delete link;
   };
 
+<?php
+  foreach ($Qrcodes as $value) { ?>
+    downloadURI(<?php $value?>, 'qrcode.png');
+<?php }?>
 <script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
