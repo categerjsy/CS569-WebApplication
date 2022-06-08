@@ -5,11 +5,10 @@ session_start ();
   header("Location: index.php");
  }
 
-$thunt=$_POST["thunt"];
-echo "gfdds";
-echo $thunt;
+$thunt=$_SESSION["th"];
+
 ?>
-<!-- <html lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -64,7 +63,7 @@ echo $thunt;
 
     <section id="about">
     <div class='container'>
-    <!-- <?php
+    <?php
     $query = mysqli_query($conn, 'SELECT * FROM has WHERE id_thunt='$thunt'');
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $riddle=$row["id_riddle"];
@@ -133,7 +132,7 @@ echo $thunt;
         }
     }
     ?>
-    </div> -->
+    </div>
 
     </section>
     <footer id="footer">
@@ -178,4 +177,4 @@ window.onload = function ()
   <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
   <script src="js/number.js"></script>
   <script src="js/disablePreviousDates.js"></script>
-</html> -->
+</html>
