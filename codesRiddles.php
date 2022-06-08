@@ -74,6 +74,7 @@ $thunt=$_SESSION["th"];
         $object=$rowr['object_AR'];
         $infotext=$rowr['infotext'];
         $points=$rowr['points'];
+        $link=$rowr['riddle_link'];
         echo "<div class='row'>
           <div class='col-25'>
             <p>Riddle's Text</p>
@@ -123,7 +124,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div class='qrCode' data-qrcodeval='test qr code value 1'></div> 
+            <div class='qrCode' data-qrcodeval='$link'></div> 
             </div>
         </div>
             </div>
