@@ -13,7 +13,7 @@ $sql = "INSERT INTO riddle (text, location_solution ,object_AR ,infotext, points
 VALUES ('$riddleText','$solution','$object','$infoText','$number','not defined')";
 mysqli_query($conn,$sql);
 $last_id = $conn->insert_id;
-$link='https://arthunt.epizy.com/linked.php?id='.$last_id;
+$link='https://arthunt.000webhostapp.com/Linked.php?id='.$last_id;
 $user=$_SESSION["id_user"];
 $sql = "UPDATE riddle
 		SET riddle_link='$link'
