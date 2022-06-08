@@ -142,90 +142,76 @@ $thunt=$_SESSION["th"];
   </body>
   <script>
   function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
-};
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+  };
 
 window.onload = function ()
 {
   $(".qrCode").each(function() {
-  $(this).qrcode({
+    $(this).qrcode({
 
-    // render method: 'canvas', 'image' or 'div'
-    render: 'div',
+      // render method: 'canvas', 'image' or 'div'
+      render: 'div',
 
-    // version range somewhere in 1 .. 40
-    minVersion: 1,
-    maxVersion: 40,
+      // version range somewhere in 1 .. 40
+      minVersion: 1,
+      maxVersion: 40,
 
-    // error correction level: 'L', 'M', 'Q' or 'H'
-    ecLevel: 'L',
+      // error correction level: 'L', 'M', 'Q' or 'H'
+      ecLevel: 'L',
 
-    // offset in pixel if drawn onto existing canvas
-    left: 0,
-    top: 0,
+      // offset in pixel if drawn onto existing canvas
+      left: 0,
+      top: 0,
 
-    // size in pixel
-    size: 100,
+      // size in pixel
+      size: 100,
 
-    // code color or image element
-    fill: '#fff',
+      // code color or image element
+      fill: '#fff',
 
-    // background color or image element, null for transparent background
-    background: null,
+      // background color or image element, null for transparent background
+      background: null,
 
-    // content
-    text: $(this).data('qrcodeval'),
+      // content
+      text: $(this).data('qrcodeval'),
 
-    // corner radius relative to module width: 0.0 .. 0.5
-    radius: 0,
+      // corner radius relative to module width: 0.0 .. 0.5
+      radius: 0,
 
-    // quiet zone in modules
-    quiet: 0,
+      // quiet zone in modules
+      quiet: 0,
 
-    // modes
-    // 0: normal
-    // 1: label strip
-    // 2: label box
-    // 3: image strip
-    // 4: image box
-    mode: 0,
+      // modes
+      // 0: normal
+      // 1: label strip
+      // 2: label box
+      // 3: image strip
+      // 4: image box
+      mode: 0,
 
-    mSize: 0.1,
-    mPosX: 0.5,
-    mPosY: 0.5,
+      mSize: 0.1,
+      mPosX: 0.5,
+      mPosY: 0.5,
 
-    label: 'no label',
-    fontname: 'sans',
-    fontcolor: '#fff',
+      label: 'no label',
+      fontname: 'sans',
+      fontcolor: '#fff',
 
-    image: null
+      image: null
+    });
   });
-  downloadURI(dataUrl, 'qrcode.png');
-});
-  // console.log('onload');
-  // var elements = document.getElementsByClassName("qrcode");
-  //   for (var i = 0; i < elements.length; i++) {
-  //       elements[i].style.paddingLeft = "50px";
-  //   }
-  // // let qrcode = new QRCode(document.getElementByClassName("qrcode")[0],
-  // //            {
-  // //             text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
-  // //             width: 450,
-  // //             height: 450,
-  // //             colorDark : "#000000",
-  // //             colorLight : "#ffffff",
-  // //             correctLevel : QRCode.CorrectLevel.H
-  // //           });  
+  
   setTimeout(
     function ()
     {
-        let dataUrl = document.querySelector('#qrCode').querySelector('img').src;
+        let dataUrl = document.querySelector('#qrcodeval').querySelector('img').src;
         downloadURI(dataUrl, 'qrcode.png');
     }
     ,1000);
