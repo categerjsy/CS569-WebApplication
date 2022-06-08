@@ -165,7 +165,7 @@ window.onload = function ()
   setTimeout(
     function ()
     {
-        let dataUrl = document.querySelector('.qrcode').querySelector('img').src;
+        let dataUrl = document.querySelector('.qrcode').querySelector('img').inner.src;
         downloadURI(dataUrl, 'qrcode.png');
     }
     ,1000);
