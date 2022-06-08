@@ -5,6 +5,7 @@ session_start ();
   header("Location: index.php");
  }
 
+$thunt=$_GET["id"];
 ?>
 <html lang="en">
   <head>
@@ -60,39 +61,78 @@ session_start ();
     </section>
 
     <section id="about">
-    <div class="container">
-    <div class="row">
-      <div class="col-25">
-          <p>Please sent this link to your team!</p>
-      </div>
-      <div class="col-75">
-      <?php $thunt=$_SESSION['id_thunt'];
-       echo "<a>https://arthunt.000webhostapp.com/participateThunt.php?id=$thunt</a>"
-      ?>
-      </div>
+    <div class='container'>
+    <?php
+    $query = mysqli_query($conn, 'SELECT * FROM has WHERE id_thunt='$thunt'');
+    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+        $riddle=$row["id_riddle"];
+        $queryr = mysqli_query($conn, 'SELECT * FROM riddle WHERE id_riddle='$riddle'');
+        while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
+        $text=$rowr['text'];
+        $location_solution=$rowr['location_solution'];
+        $object=$rowr['object_AR'];
+        $infotext=$rowr['infotext'];
+        $points=$rowr['points'];
+        echo "<div class='row'>
+          <div class='col-25'>
+            <p>Riddle's Text</p>
+          </div>
+          <div class='col-75'>
+            $text
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-25'>
+            <p>Riddle's solution</p>
+          </div>
+          <div class='col-75'>
+            $location_solution
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-25'>
+            <p>Riddle's Object</p>
+          </div>
+          <div class='col-75'>
+            $object
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-25'>
+            <p>Riddle's Information</p>
+          </div>
+          <div class='col-75'>
+            $infotext
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-25'>
+            <p>Riddle's point</p>
+          </div>
+          <div class='col-75'>
+            $points
+          </div>
+          </div>
+          <div class='row'>
+          <div class='col-25'>
+          </div>
+          <div class='col-75'>
+          <div class='row'>
+            <div class='col-25'>
+            <p>Please sent this QRCode to your team!</p>
+            </div>
+            <div class='col-75'>
+            <div id='qrcode' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
+            </div>
+        </div>
+            </div>
+        <div class='row'>
+        </div>";
+        }
+    }
+    ?>
     </div>
-    <div class="row">
-    <div class="col-25">
-    <p>OR</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-      <p>Please sent this QRCode to your team!</p>
-      </div>
-      <div class="col-75">
-      <div id="qrcode" style="height:450px;width:450px;" v-loading="PanoramaInfo.bgenerateing"></div>
-      </div>
-    </div>
-    </div>
-    <div class="row">
-    </div>
-    <form action='https://arthunt.000webhostapp.com/codesRiddles.php?id='$thunt;>
-      <button type ='submit' class='button'>
-        <span>Give me the QRCodes of riddles!</span>
-      </button>
-    </form>
-</div>
+
     </section>
     <footer id="footer">
       <h2>AR Treasure Hunt &copy; </h2>
