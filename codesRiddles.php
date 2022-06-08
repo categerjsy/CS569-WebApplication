@@ -123,7 +123,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div id='qrcode' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
+            <div class='qrcode[]' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div>
             </div>
         </div>
             </div>
