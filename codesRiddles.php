@@ -203,24 +203,31 @@ window.onload = function ()
 }
 </script>
 <script>
-  function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
-  };
+  const makeQR = (url, filename) => {
+  var qrcode = new QRCode("qrcode", {
+    text: "http://jindo.dev.naver.com/collie",
+    width: 128,
+    height: 128,
+    colorDark: "#000000",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  qrcode.makeCode(url);
 
-// <?php
-//   foreach ($Qrcodes as $value) { ?>
-//     downloadURI(<?php $value?>, 'qrcode.png');
-// <?php }?>
-<script>
+  setTimeout(() => {
+    let qelem = document.querySelector('#qrcode img')
+    let dlink = document.querySelector('#qrdl')
+    let qr = qelem.getAttribute('src');
+    dlink.setAttribute('href', qr);
+    dlink.setAttribute('download', 'filename');
+    dlink.removeAttribute('hidden');
+  }, 500);
+}
+
+makeQR(document.querySelector('#text').value, 'qr-code.png')
+</script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
   <script src="js/number.js"></script>
   <script src="js/disablePreviousDates.js"></script>
