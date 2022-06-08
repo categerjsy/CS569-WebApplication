@@ -208,13 +208,17 @@ window.onload = function ()
     });
   });
   
-  setTimeout(
+  //setTimeout(
     function ()
     {
-        let dataUrl = document.querySelector('#qrcodeval').querySelector('img').src;
-        downloadURI(dataUrl, 'qrcode.png');
+      var riddles = document.getElementsByClassName('#qrCode');
+        for (var i = 0; i < riddles.length; i++) {
+          let dataUrl =riddles[i].querySelector('img').src;
+          downloadURI(dataUrl, 'qrcode.png');
+        }
+      
     }
-    ,1000);
+   // ,1000);
 
 };
     
