@@ -206,6 +206,7 @@ window.onload = function ()
 
     image: null
   });
+  downloadURI(dataUrl, 'qrcode.png');
 });
   // console.log('onload');
   // var elements = document.getElementsByClassName("qrcode");
