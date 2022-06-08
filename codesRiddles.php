@@ -141,15 +141,6 @@ $thunt=$_SESSION["th"];
     </footer>
   </body>
   <script>
-  function downloadURI(uri, name) {
-    var link = document.createElement("a");
-    link.download = name;
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    delete link;
-  };
 
 window.onload = function ()
 {
@@ -207,19 +198,20 @@ window.onload = function ()
       image: null
     });
   });
-  
-  //setTimeout(
-    function ()
+  function ()
     {
-      var riddles = document.getElementsByClassName('#qrCode');
-        for (var i = 0; i < riddles.length; i++) {
-          let dataUrl =riddles[i].querySelector('img').src;
-          downloadURI(dataUrl, 'qrcode.png');
-        }
-      
+      let dataUrl = document.querySelectorAll('.qrCode').querySelector('img').src;
+      downloadURI(dataUrl, 'qrcode.png');
     }
-   // ,1000);
-
+    function downloadURI(uri, name) {
+      var link = document.createElement("a");
+      link.download = name;
+      link.href = uri;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      delete link;
+    };
 };
     
   </script>
