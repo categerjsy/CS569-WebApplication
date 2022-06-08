@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Εξυπηρετητής: 127.0.0.1
--- Χρόνος δημιουργίας: 26 Μάη 2022 στις 08:01:44
--- Έκδοση διακομιστή: 10.4.22-MariaDB
--- Έκδοση PHP: 8.1.2
+-- Φιλοξενητής: localhost:3306
+-- Χρόνος δημιουργίας: 08 Ιουν 2022 στις 06:51:07
+-- Έκδοση διακομιστή: 10.5.12-MariaDB
+-- Έκδοση PHP: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Βάση δεδομένων: `treasure_hunt_db`
+-- Βάση δεδομένων: `id19040562_arthunt`
 --
 
 -- --------------------------------------------------------
@@ -59,7 +60,17 @@ INSERT INTO `creates_team` (`id_user`, `id_team`) VALUES
 (3, 20),
 (3, 21),
 (3, 22),
-(3, 23);
+(3, 23),
+(3, 24),
+(3, 25),
+(3, 26),
+(3, 27),
+(3, 28),
+(6, 29),
+(7, 30),
+(7, 31),
+(7, 32),
+(7, 33);
 
 -- --------------------------------------------------------
 
@@ -96,7 +107,12 @@ INSERT INTO `creates_treasure_hunt` (`id_user`, `id_thunt`) VALUES
 (3, 17),
 (3, 18),
 (3, 19),
-(7, 20);
+(7, 20),
+(3, 21),
+(6, 22),
+(3, 23),
+(5, 24),
+(8, 25);
 
 -- --------------------------------------------------------
 
@@ -126,7 +142,21 @@ INSERT INTO `has` (`id_thunt`, `id_riddle`) VALUES
 (19, 5),
 (19, 6),
 (20, 1),
-(20, 2);
+(20, 2),
+(21, 1),
+(21, 2),
+(21, 9),
+(21, 11),
+(1, 1),
+(1, 9),
+(1, 12),
+(23, 1),
+(23, 2),
+(23, 4),
+(23, 6),
+(25, 2),
+(25, 3),
+(25, 9);
 
 -- --------------------------------------------------------
 
@@ -166,7 +196,18 @@ INSERT INTO `is_member` (`id_user`, `id_team`, `role`) VALUES
 (3, 23, 'leader'),
 (3, 23, 'simplePlayer'),
 (4, 23, 'simplePlayer'),
-(4, 23, 'simplePlayer');
+(4, 23, 'simplePlayer'),
+(3, 24, 'leader'),
+(3, 25, 'leader'),
+(3, 26, 'leader'),
+(3, 27, 'leader'),
+(3, 28, 'leader'),
+(6, 28, 'simplePlayer'),
+(6, 29, 'leader'),
+(7, 30, 'leader'),
+(7, 31, 'leader'),
+(7, 32, 'leader'),
+(7, 33, 'leader');
 
 -- --------------------------------------------------------
 
@@ -178,6 +219,35 @@ CREATE TABLE `participate` (
   `id_team` int(11) NOT NULL,
   `id_thunt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16le;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `participate`
+--
+
+INSERT INTO `participate` (`id_team`, `id_thunt`) VALUES
+(29, 23),
+(30, 23),
+(33, 10),
+(30, 1),
+(32, 2),
+(30, 3),
+(30, 4),
+(30, 5),
+(30, 6),
+(30, 7),
+(30, 8),
+(30, 9),
+(30, 10),
+(30, 11),
+(33, 12),
+(30, 13),
+(30, 10),
+(30, 1),
+(30, 3),
+(30, 10),
+(30, 5),
+(30, 9),
+(29, 10);
 
 -- --------------------------------------------------------
 
@@ -202,7 +272,9 @@ INSERT INTO `produce` (`id_user`, `id_riddle`) VALUES
 (3, 8),
 (3, 9),
 (3, 10),
-(7, 11);
+(7, 11),
+(3, 12),
+(7, 13);
 
 -- --------------------------------------------------------
 
@@ -235,7 +307,9 @@ INSERT INTO `riddle` (`id_riddle`, `text`, `location_solution`, `object_AR`, `in
 (8, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'GoldCoin', 'fbdfvfvd\r\n      sdvfbggfewfsvfsgdhjk', 14, 'https://localhost/CS569-WebApplication/participateTeam.php?id=8'),
 (9, 'dfghjfkg\r\n      ', 'sdfbgnhb', 'BronzeCoin', '        Plfvzdxbfgnchv bere\r\n      ADSfzdgfghmj ,bh', 4, 'https://localhost/CS569-WebApplication/linked.php?id=9'),
 (10, '        Pleaseczxvbncgfhmngj\r\n      ', 'xcvbfngmhbmn,', 'GoldCoin', 'vdxgfhcgjtfh', 7, 'https://localhost/CS569-WebApplication/linked.php?id=10'),
-(11, 'This is a demo riddle\r\n      ', '  Leonton Square', 'SilverCoin', '  Leonton Square (genitive), after the Venetian-era Morosini Fountain (popularly called \"τα Λιοντάρια\", \"The Lions\") in its midst, which features four lions supporting the main basin.', 12, 'https://localhost/CS569-WebApplication/linked.php?id=11');
+(11, 'This is a demo riddle\r\n      ', '  Leonton Square', 'SilverCoin', '  Leonton Square (genitive), after the Venetian-era Morosini Fountain (popularly called \"τα Λιοντάρια\", \"The Lions\") in its midst, which features four lions supporting the main basin.', 12, 'https://localhost/CS569-WebApplication/linked.php?id=11'),
+(12, 'jhfjiseknsfjkmfneokld;mf end      ', 'asegdrhf', 'SilverCoin', 'gdlfkgporskgokordkgr', 3, 'https://arthunt.epizy.com/linked.php?id=12'),
+(13, 'gdhy5etgb tgrdbhrtsedfvhetrfv \r\n      dafsdg', 'erfgthrtg', 'SilverCoin', 'fgfhyrtgbytdghr\r\n      ', 7, 'https://arthunt.000webhostapp.com/Linked.php?id=13');
 
 -- --------------------------------------------------------
 
@@ -245,7 +319,8 @@ INSERT INTO `riddle` (`id_riddle`, `text`, `location_solution`, `object_AR`, `in
 
 CREATE TABLE `solve` (
   `id_team` int(11) NOT NULL,
-  `id_riddle` int(11) NOT NULL
+  `id_riddle` int(11) NOT NULL,
+  `id_thunt` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16le;
 
 -- --------------------------------------------------------
@@ -287,7 +362,17 @@ INSERT INTO `team` (`id_team`, `name`, `numberPlayers`) VALUES
 (20, 'Team test', 5),
 (21, 'This is a test!!', 4),
 (22, 'lalalallalala', 1),
-(23, '/.,mnbvgfdtgyhujkl', 1);
+(23, '/.,mnbvgfdtgyhujkl', 1),
+(24, 'DFGH', 1),
+(25, 'my teams', 6),
+(26, 'asdgfhghdfdr', 9),
+(27, 'mjhgfdghjbkml, ', 9),
+(28, 'asdfsgsegfvdefv', 9),
+(29, 'qwafesgrdhtjyt', 1),
+(30, 'adfghjk', 6),
+(31, 'try 6', 6),
+(32, 'ADFSgtrhyjiokp', 1),
+(33, 'ADFSgtrhyjiokp[l;', 1);
 
 -- --------------------------------------------------------
 
@@ -307,7 +392,7 @@ CREATE TABLE `treasure_hunt` (
 --
 
 INSERT INTO `treasure_hunt` (`id_thunt`, `status`, `name`, `datetime`) VALUES
-(1, 'created', 'sdafghjk.m,', '2022-05-14 07:54:00'),
+(1, 'created', 'sdafghjk.m, auga', '2022-06-30 07:54:00'),
 (2, '', 'asdfgh', '2022-05-28 19:20:00'),
 (3, '', 'cnvbn', '2022-05-28 14:35:00'),
 (4, '', 'my hunt ', '2022-05-26 21:15:00'),
@@ -326,7 +411,12 @@ INSERT INTO `treasure_hunt` (`id_thunt`, `status`, `name`, `datetime`) VALUES
 (17, 'Created', 'jhkgftyghkhkgjkybkgnm', '2022-05-26 18:16:00'),
 (18, 'Created', 'adsfgb', '2022-06-02 18:37:00'),
 (19, 'Created', 'This is my demo treasure ', '2022-06-18 21:30:00'),
-(20, 'Created', 'This is a demo treasure h', '2022-08-18 22:10:00');
+(20, 'Created', 'This is a demo treasure h', '2022-08-18 22:10:00'),
+(21, 'Created', 'rsegdhftjg hunt', '2022-06-25 20:33:00'),
+(22, 'Created', 'myn ', '2022-06-30 16:25:00'),
+(23, 'Created', 'this i my treasure hunt', '2022-06-30 12:10:00'),
+(24, 'Created', 'qwertyu', '2022-06-25 19:57:00'),
+(25, 'Created', 'lkjiuytgfhvc ', '2022-06-26 20:05:00');
 
 -- --------------------------------------------------------
 
@@ -354,7 +444,10 @@ INSERT INTO `user` (`id_user`, `birth`, `username`, `password`, `fullname`, `ema
 (4, '2002-06-19 00:00:00', 'dit17024', 'διτ17024', 'dit 17024', 'dit17024@uop.gr'),
 (5, '2009-01-15 00:00:00', 'myname', 'mynamekk', 'My name', 'myname@gmail.com'),
 (6, '1999-07-22 00:00:00', 'kate', 'kate1999', 'Katerina Gerakianaki', 'kate@gmail.com'),
-(7, '1999-07-22 00:00:00', 'Maria', 'maraki', 'Katerina Maria Gerakianaki', 'mariagerakianaki@gmail.com');
+(7, '1999-07-22 00:00:00', 'Maria', 'maraki', 'Katerina Maria Gerakianaki', 'mariagerakianaki@gmail.com'),
+(8, '2022-04-18 00:00:00', 'tes', 'testi', 'testi testi', 'tes@gmail.com'),
+(9, '2022-04-18 00:00:00', 'Yynakar', 'test', 'Ioanna', 'yymakar@gmail.com'),
+(10, '1994-12-27 00:00:00', 'new', 'newnew', 'nwrf fwdw ', 'newkit@gmail.com');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -392,25 +485,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT για πίνακα `riddle`
 --
 ALTER TABLE `riddle`
-  MODIFY `id_riddle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_riddle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT για πίνακα `team`
 --
 ALTER TABLE `team`
-  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT για πίνακα `treasure_hunt`
 --
 ALTER TABLE `treasure_hunt`
-  MODIFY `id_thunt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_thunt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT για πίνακα `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
