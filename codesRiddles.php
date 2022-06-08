@@ -64,12 +64,13 @@ $thunt=$_SESSION["th"];
     <section id="about">
     <div class='container'>
     <?php
-    // $query = mysqli_query($conn, 'SELECT * FROM has WHERE id_thunt='$thunt'');
-    // while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-    //     $riddle=$row["id_riddle"];
-    //     $queryr = mysqli_query($conn, 'SELECT * FROM riddle WHERE id_riddle='$riddle'');
-    //     while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
-    //     $text=$rowr['text'];
+     $query = mysqli_query($conn, 'SELECT * FROM has WHERE id_thunt='$thunt'');
+     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+         $riddle=$row["id_riddle"];
+         $queryr = mysqli_query($conn, 'SELECT * FROM riddle WHERE id_riddle='$riddle'');
+         while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
+         $text=$rowr['text'];
+         echo $text;
     //     $location_solution=$rowr['location_solution'];
     //     $object=$rowr['object_AR'];
     //     $infotext=$rowr['infotext'];
@@ -129,8 +130,8 @@ $thunt=$_SESSION["th"];
     //         </div>
     //     <div class='row'>
     //     </div>";
-    //     }
-    // }
+         }
+     }
      ?>
     </div>
 
