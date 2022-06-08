@@ -213,10 +213,10 @@ window.onload = function ()
   delete link;
   };
 
-<?php
-  foreach ($Qrcodes as $value) { ?>
-    downloadURI(<?php $value?>, 'qrcode.png');
-<?php }?>
+// <?php
+//   foreach ($Qrcodes as $value) { ?>
+//     downloadURI(<?php $value?>, 'qrcode.png');
+// <?php }?>
 <script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
