@@ -153,7 +153,7 @@ $thunt=$_SESSION["th"];
 window.onload = function ()
 {
   console.log('onload');
-  let qrcode = new QRCode(document.getElementByClass("qrcode"),
+  let qrcode = new QRCode(document.getElementByClassName("qrcode"),
              {
               text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
               width: 450,
