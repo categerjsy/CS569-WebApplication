@@ -66,7 +66,7 @@ $id=$_SESSION["id_user"];
     </br></br>
     <h2>Treasure hunt you had created:</h2>
     <?php
-  
+    $notr=0;
     $my_user=$_SESSION["id_user"] ;
 
     $query = mysqli_query($conn, "SELECT * FROM creates_treasure_hunt WHERE id_user='$my_user'");
@@ -75,7 +75,7 @@ $id=$_SESSION["id_user"];
       $queryt = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$treasure_hunt'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $thunt_name=$rowt['name'];
-      
+        $notr=1;
       echo "<div class='row'>
             <div class='col-25'>
               <p>Treasure hunt name</p>
@@ -97,7 +97,7 @@ $id=$_SESSION["id_user"];
             </div><hr>";
       }
     }
-    if ($row) { 
+    if ($notr==0) { 
       
       echo "</br></br><h3>You have no treasure hunts! :/ <h3></br></br>";
     }
