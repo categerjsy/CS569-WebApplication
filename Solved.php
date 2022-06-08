@@ -1,7 +1,7 @@
 <?php
 
 include 'config.php';
-$id_riddle=$_GET["idr"];
+$id_riddle=$_GET["r"];
 //εδω καπως θα μπουν τα αντιστοιχα :3
 $id_thunt=5;
 $id_team=5;
