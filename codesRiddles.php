@@ -221,13 +221,13 @@ window.onload = function ()
   // //             colorLight : "#ffffff",
   // //             correctLevel : QRCode.CorrectLevel.H
   // //           });  
-  // setTimeout(
-  //   function ()
-  //   {
-  //       let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
-  //       downloadURI(dataUrl, 'qrcode.png');
-  //   }
-  //   ,1000);
+  setTimeout(
+    function ()
+    {
+        let dataUrl = document.querySelector('#qrCode').querySelector('img').src;
+        downloadURI(dataUrl, 'qrcode.png');
+    }
+    ,1000);
 
 };
     
