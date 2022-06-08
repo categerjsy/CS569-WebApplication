@@ -86,7 +86,11 @@ session_start ();
     </div>
     <div class="row">
     </div>
-
+    <form action='https://arthunt.000webhostapp.com/codesRiddles.php?id='$thunt;>
+      <button type ='submit' class='button'>
+        <span>Give me the QRCodes of riddles!</span>
+      </button>
+    </form>
 </div>
     </section>
     <footer id="footer">
