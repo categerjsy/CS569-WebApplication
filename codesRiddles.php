@@ -125,6 +125,7 @@ $thunt=$_SESSION["th"];
             </div>
             <div class='col-75'>
             <div class='qrCode' data-qrcodeval='$link'></div> 
+            <script>downloadURI($link, 'qrcode.png');</script>
             </div>
         </div>
             </div>
@@ -200,6 +201,18 @@ window.onload = function ()
   });
 }
 </script>
+<script>
+  function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  delete link;
+  };
+
+<script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 
