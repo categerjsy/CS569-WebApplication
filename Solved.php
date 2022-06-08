@@ -10,3 +10,5 @@ $id_team=5;
 $sql = "INSERT INTO solve (id_riddle,id_thunt,id_team)
 VALUES ('$id_riddle','$id_thunt','$id_team')";
 mysqli_query($conn,$sql);
+
+?>
