@@ -31,4 +31,4 @@
     
     // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
-   // echo '<p><a href='download2.php?path=qrcodes/005_file_4735c4cef32d8f4e05f3057d462b6760.png'>Download JPG file</a></p>';
+   echo '<p><a href='https://arthunt.000webhostapp.com/download2.php?path=qrcodes/005_file_4735c4cef32d8f4e05f3057d462b6760.png'>Download JPG file</a></p>';
