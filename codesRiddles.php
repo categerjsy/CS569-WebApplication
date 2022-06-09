@@ -126,7 +126,8 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div class='qrCode' data-qrcodeval='$link'></div> 
+            <div class='qrCode'id='qrcode' data-qrcodeval='$link'></div> 
+            <a href='dataURL' target='_blank' download='image.png'>
             </div>
         </div>
             </div>
@@ -136,13 +137,6 @@ $thunt=$_SESSION["th"];
      }
      ?>
     </div>
-
-
-
-    <input id="text" type="text" value="https://stackoverflow.com" style="width:80%" /><br />
-<div id="qrcode"></div>
-
-<a id='qrdl' hidden>Download</a>
 
     </section>
     <footer id="footer">
@@ -210,28 +204,7 @@ window.onload = function ()
 }
 </script>
 <script>
-  const makeQR = (url, filename) => {
-  var qrcode = new QRCode("qrcode", {
-    text: "http://jindo.dev.naver.com/collie",
-    width: 128,
-    height: 128,
-    colorDark: "#000000",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
-  });
-  qrcode.makeCode(url);
-
-  setTimeout(() => {
-    let qelem = document.querySelector('#qrcode img')
-    let dlink = document.querySelector('#qrdl')
-    let qr = qelem.getAttribute('src');
-    dlink.setAttribute('href', qr);
-    dlink.setAttribute('download', 'filename');
-    dlink.removeAttribute('hidden');
-  }, 500);
-}
-
-makeQR(document.querySelector('#text').value, 'qr-code.png')
+var dataURL = document.getElementById('qrcode').toDataURL();
 </script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
