@@ -118,7 +118,7 @@ window.onload = function ()
         downloadURI(dataUrl, 'qrcode.png');
         history.back();
     }
-    ,1000);
+    ,10);
     
 
 };
