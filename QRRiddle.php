@@ -2,12 +2,12 @@
 include 'config.php';
 session_start ();
 include('phpqrcode/qrlib.php');
-$link=$_POST["link"];
+$codeContents=$_POST["link"];
 
 
 $tempDir = "qrcodes/";
     
-$codeContents = $link;
+echo $codeContents;
     
 
 $fileName = 'riddle_'.md5($codeContents).'.png';
@@ -30,4 +30,4 @@ $urlRelativeFilePath = $tempDir.$fileName;
     
     // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
-   echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=qrcodes/$filename'>Download JPG file</a></p>";
+   echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=qrcodes/$pngAbsoluteFilePath'>Download JPG file</a></p>";
