@@ -74,7 +74,6 @@ $link=$_POST["link"];
     </div>
     <div class="row">
       <div class="col-25">
-      <?php echo $link;?>
       <p>Please save this QRCode for your treasure hunt.</p>
       </div>
       <div class="col-75">
@@ -117,8 +116,10 @@ window.onload = function ()
     {
         let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
         downloadURI(dataUrl, 'qrcode.png');
+        history.back();
     }
     ,1000);
+    
 
 };
     
