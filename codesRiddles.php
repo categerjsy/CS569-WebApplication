@@ -137,14 +137,17 @@ $thunt=$_SESSION["th"];
         <div class='col-25'>
           </div>
           <div class='col-75'>
-          <form method='post' action='QRRiddle.php#form-anchor' id='form-anchor'>
-            <button type ='submit' name='link'  class='button' value='$link'>
-              <span>Download the QRcode of this riddle</span>
-            </button>
-          </form>
+            <div class='col-25'>
+            </div>
+            <div class='col-75'>
+            <form method='post' action='QRRiddle.php#form-anchor' id='form-anchor'>
+              <button type ='submit' name='link'  class='button' value='$link'>
+                <span>Download the QRcode of this riddle</span>
+              </button>
+            </form>
+          </div>
         </div>
-        </div>
-        </div>";
+        </div><hr>";
          }
      }
      ?>
