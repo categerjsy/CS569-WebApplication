@@ -126,7 +126,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div class='qrCode' id='qrcode' data-qrcodeval='$link' style='height:450px;width:450px;' v-loading='PanoramaInfo.bgenerateing'></div> 
+            <div class='qrCode' data-qrcodeval='$link'></div> 
             
             </div>
         </div>
@@ -151,7 +151,7 @@ window.onload = function ()
     $(this).qrcode({
 
       // render method: 'canvas', 'image' or 'div'
-      render: 'div',
+      render: 'canvas', //'div',
 
       // version range somewhere in 1 .. 40
       minVersion: 1,
@@ -214,16 +214,7 @@ window.onload = function ()
   delete link;
   };
 
-window.onload = function ()
-{
-  setTimeout(
-    function ()
-    {
-        let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
-        downloadURI(dataUrl, 'qrcode.png');
-    }
-    ,1000);
-  }
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://html2canvas.hertzen.com/build/html2canvas.js"></script>
