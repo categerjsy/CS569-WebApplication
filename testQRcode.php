@@ -1,7 +1,7 @@
 <?php
 
     include('phpqrcode/qrlib.php');
-    include('config.php');
+   // include('config.php');
 
     // how to save PNG codes to server
     
@@ -31,4 +31,4 @@
     
     // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
-    
+    echo '<p><a href='download2.php?path=qrcodes/005_file_4735c4cef32d8f4e05f3057d462b6760.png'>Download JPG file</a></p>';
