@@ -126,8 +126,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <canvas class='qrCode' data-qrcodeval='$link'></canvas> 
-            
+            <div class='qrCode' data-qrcodeval='$link'></div> 
             </div>
         </div>
             </div>
@@ -151,7 +150,7 @@ window.onload = function ()
     $(this).qrcode({
 
       // render method: 'canvas', 'image' or 'div'
-      render: 'canvas', //'div',
+      render: 'div',
 
       // version range somewhere in 1 .. 40
       minVersion: 1,
@@ -204,16 +203,6 @@ window.onload = function ()
 }
 </script>
 <script>
-  function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
-  };
-
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
