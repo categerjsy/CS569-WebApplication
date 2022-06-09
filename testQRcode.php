@@ -7,11 +7,11 @@
     
     $tempDir = "qrcodes/";
     
-    $codeContents = 'This Goes From File';
+    $codeContents = 'https://localhost/CS569-WebApplication/linked.php?id=1';
     
     // we need to generate filename somehow, 
     // with md5 or with database ID used to obtains $codeContents...
-    $fileName = '005_file_'.md5($codeContents).'.png';
+    $fileName = 'riddle_'.md5($codeContents).'.png';
     
     $pngAbsoluteFilePath = $tempDir.$fileName;
     $urlRelativeFilePath = $tempDir.$fileName;
