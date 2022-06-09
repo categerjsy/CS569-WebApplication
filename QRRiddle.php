@@ -9,7 +9,7 @@ $tempDir = "qrcodes/";
     
 $codeContents = $link;
     
-
+echo "<h2?>$codeContents</h2>";
 $fileName = 'riddle_'.md5($codeContents).'.png';
     
 $pngAbsoluteFilePath = $tempDir.$fileName;
