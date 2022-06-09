@@ -4,7 +4,7 @@ session_start ();
  if (isset($_SESSION["username"])==NULL){
   header("Location: index.php");
  }
-
+$link=$_POST["link"];
 ?>
 <html lang="en">
   <head>
@@ -54,8 +54,8 @@ session_start ();
   </nav>
     <section class="showcase-area" id="showcase">
       <div class="showcase-container">
-        <h1 class="main-title" id="home">Create your team!</h1>
-        <p>Solve riddles and pick up coins in your treasure chest!</p>
+        <h1 class="main-title" id="home">Riddle!</h1>
+        <p>QRCode for your riddle!</p>
       </div>
     </section>
 
@@ -63,22 +63,18 @@ session_start ();
     <div class="container">
     <div class="row">
       <div class="col-25">
-          <p>Please sent this link to your team!</p>
       </div>
       <div class="col-75">
-      <?php $thunt=$_SESSION['id_thunt'];
-       echo "<a>https://arthunt.000webhostapp.com/participateThunt.php?id=$thunt</a>"
-      ?>
       </div>
     </div>
     <div class="row">
     <div class="col-25">
-    <p>OR</p>
+    <p></p>
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-      <p>Please sent this QRCode to your team!</p>
+      <p>Please save this QRCode for your treasure hunt.</p>
       </div>
       <div class="col-75">
       <div id="qrcode" style="height:450px;width:450px;" v-loading="PanoramaInfo.bgenerateing"></div>
@@ -113,7 +109,7 @@ window.onload = function ()
 {
   let qrcode = new QRCode(document.getElementById("qrcode"),
              {
-              text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
+              text: "<?php echo $link ?>",
               width: 450,
               height: 450,
               colorDark : "#000000",
