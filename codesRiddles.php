@@ -126,8 +126,8 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div class='qrCode'id='qrcode' data-qrcodeval='$link'></div> 
-            <a href='dataURL' target='_blank' download='image.png'>
+            <div class='qrCode' id='copyDiv' data-qrcodeval='$link'></div> 
+            
             </div>
         </div>
             </div>
@@ -204,8 +204,18 @@ window.onload = function ()
 }
 </script>
 <script>
-var dataURL = document.getElementById('qrcode').toDataURL();
+ var element = $("#widget"); // global variable
+    var getCanvas; // global variable
+    
+    html2canvas(element, {
+             onrendered: function (canvas) {
+                    $("#copyDiv").append(canvas);
+                    getCanvas = canvas;
+                 }
+      });
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://html2canvas.hertzen.com/build/html2canvas.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
