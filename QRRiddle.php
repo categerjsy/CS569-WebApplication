@@ -111,14 +111,14 @@ window.onload = function ()
               colorLight : "#ffffff",
               correctLevel : QRCode.CorrectLevel.H
             });  
-  setTimeout(
+//   setTimeout(
     function ()
     {
         let dataUrl = document.querySelector('#qrcode').querySelector('img').src;
         downloadURI(dataUrl, 'qrcode.png');
         history.back();
     }
-    ,0);
+    // ,0);
     
 
 };
