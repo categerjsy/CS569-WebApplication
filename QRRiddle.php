@@ -74,6 +74,7 @@ $link=$_POST["link"];
     </div>
     <div class="row">
       <div class="col-25">
+      <?php echo $link;?>
       <p>Please save this QRCode for your treasure hunt.</p>
       </div>
       <div class="col-75">
@@ -83,11 +84,6 @@ $link=$_POST["link"];
     </div>
     <div class="row">
     </div>
-    <form method='post' action='qrRiddles.php'>
-					<button type ='submit' name='thunt'  class='button' value='<?php echo $thunt ?>'>
-        <span>Give me the QRCodes of riddles!</span>
-      </button>
-    </form>
 </div>
     </section>
     <footer id="footer">
@@ -109,7 +105,7 @@ window.onload = function ()
 {
   let qrcode = new QRCode(document.getElementById("qrcode"),
              {
-              text: "<?php echo $link ?>",
+              text: " "+"<?php echo $link ?>",
               width: 450,
               height: 450,
               colorDark : "#000000",
