@@ -30,4 +30,4 @@ $urlRelativeFilePath = $tempDir.$fileName;
     
     // displaying
     echo '<img src="'.$urlRelativeFilePath.'" />';
-   echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=qrcodes/$urlRelativeFilePath'>Download JPG file</a></p>";
+   echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=$urlRelativeFilePath'>Download JPG file</a></p>";
