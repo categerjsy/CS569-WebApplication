@@ -126,7 +126,7 @@ $thunt=$_SESSION["th"];
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>
-            <div class='qrCode' id='copyDiv' data-qrcodeval='$link'></div> 
+            <div class='qrCode'  data-qrcodeval='$link'></div> 
             
             </div>
         </div>
