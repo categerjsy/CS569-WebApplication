@@ -28,7 +28,12 @@ $tempDir = "qrcodes/";
     <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
+    <style>
+      .content {
+      display: flex; 
+      justify-content: space-between;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -139,10 +144,11 @@ $tempDir = "qrcodes/";
                 if (!file_exists($pngAbsoluteFilePath)) {
                     QRcode::png($link, $pngAbsoluteFilePath);
                 } 
-
+              echo '<div className="content">';
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
               echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg'  width='50' height='60'/></a></p>";
-       echo "    
+       echo 
+       " </div>
        </div>
         </div>
             </div>
