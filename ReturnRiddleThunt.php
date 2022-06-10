@@ -10,6 +10,14 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
         $riddle=$row["id_riddle"];
         $queryr = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$riddle'");
          while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
-            echo $rowr["text"].'"*"'.$rowr["location_solution"].'"*"'.$rowr["object_AR"].'"*"'.$rowr["infotext"].'"*"'.$rowr["points"];
+            echo $rowr["text"];
+            echo "*";
+            echo $rowr["location_solution"];
+            echo"*";
+            echo $rowr["object_AR"];
+            echo "*";
+            echo $rowr["infotext"];
+            echo "*";
+            echo $rowr["points"];
          }
     }
