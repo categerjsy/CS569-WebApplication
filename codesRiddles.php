@@ -129,6 +129,7 @@ $tempDir = "qrcodes/";
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>";
+            $fileName = 'riddle_'.md5($codeContents).'.png';
             $pngAbsoluteFilePath = $tempDir.$fileName;
             $urlRelativeFilePath = $tempDir.$fileName;
                 
