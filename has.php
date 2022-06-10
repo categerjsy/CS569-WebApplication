@@ -2,12 +2,12 @@
 include 'config.php';
 session_start ();
 $thunt=$_SESSION['id_thunt'];
-
+$qrcode="not defined";
 
 
 	if (isset($_POST['add_riddle'])){
 			$sql = "INSERT INTO has (id_thunt,id_riddle,qrcode)
-			VALUES ('$thunt', ".$_POST["add_riddle"].","not defined")";
+			VALUES ('$thunt', ".$_POST["add_riddle"].",'$qrcode')";
 
 		mysqli_query($conn,$sql);
 
