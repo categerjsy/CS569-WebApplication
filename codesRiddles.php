@@ -144,11 +144,12 @@ $tempDir = "qrcodes/";
                 if (!file_exists($pngAbsoluteFilePath)) {
                     QRcode::png($link, $pngAbsoluteFilePath);
                 } 
-              echo '<div className="content">';
+              echo '<div class="row"><div class="col-25">';
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
+              echo "</div><div class='col-75'>";
               echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg'  width='50' height='60'/></a></p>";
        echo 
-       " </div>
+       " </div></div>
        </div>
         </div>
             </div>
