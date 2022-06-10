@@ -134,9 +134,7 @@ $tempDir = "qrcodes/";
                 
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
-                    QRcode::png($codeContents, $pngAbsoluteFilePath);
-                    echo 'File generated!';
-                    echo '<hr />';
+                    QRcode::png($link, $pngAbsoluteFilePath);
                 } else {
                     echo 'File already generated! We can use this cached file to speed up site on common codes!';
                     echo '<hr />';
