@@ -141,7 +141,7 @@ $tempDir = "qrcodes/";
                 } 
 
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
-              echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg' />Download QRCODE</a></p>";
+              echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg'  width="50" height="60"/></a></p>";
        echo "    
        </div>
         </div>
