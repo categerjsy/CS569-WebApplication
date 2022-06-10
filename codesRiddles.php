@@ -131,25 +131,19 @@ $tempDir = "qrcodes/";
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>";
-            $fileName = 'riddle_'.md5($codeContents).'.png';
+            $fileName = 'riddle_'.md5($link).'.png';
             $pngAbsoluteFilePath = $tempDir.$fileName;
             $urlRelativeFilePath = $tempDir.$fileName;
                 
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
                     QRcode::png($link, $pngAbsoluteFilePath);
-                } else {
-                    echo 'File already generated! We can use this cached file to speed up site on common codes!';
-                    echo '<hr />';
-                }
-                
-                echo 'Server PNG File: '.$pngAbsoluteFilePath;
-                echo '<hr />';
-                
-                // displaying
-                echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
-               echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=$urlRelativeFilePath'>Download JPG file</a></p>";
-       echo "    </div>
+                } 
+
+              echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
+              echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=$urlRelativeFilePath'>Download QRCODE</a></p>";
+       echo "    
+       </div>
         </div>
             </div>
         <div class='row'>
