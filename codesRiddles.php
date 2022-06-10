@@ -147,7 +147,7 @@ $tempDir = "qrcodes/";
               echo '<div class="row"><div class="col-25">';
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
               echo "</div><div class='col-75'>";
-              echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg'  width='50' height='60'/></a></p>";
+              echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'><img  src='img/download-svgrepo-com.svg'  width='25' height='25'/></a></p>";
        echo 
        " </div></div>
        </div>
