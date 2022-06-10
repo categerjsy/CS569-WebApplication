@@ -67,13 +67,15 @@ $tempDir = "qrcodes/";
     <section id="about">
     <div class='container'>
     <?php
-    $Qrcodes=array();
+
+     $number=0;
      $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
      while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
          $riddle=$row["id_riddle"];
          $queryr = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$riddle'");
          while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
-         $text=$rowr['text'];
+        $number=$number+1;
+        $text=$rowr['text'];
         $location_solution=$rowr['location_solution'];
         $object=$rowr['object_AR'];
         $infotext=$rowr['infotext'];
@@ -145,7 +147,7 @@ $tempDir = "qrcodes/";
                 echo '<hr />';
                 
                 // displaying
-                echo '<img src="'.$urlRelativeFilePath.'" />';
+                echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
                echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=$urlRelativeFilePath'>Download JPG file</a></p>";
        echo "    </div>
         </div>
