@@ -134,14 +134,14 @@ $tempDir = "qrcodes/";
             $fileName = 'riddle_t'.$thunt.'_r'.$number.'png';
             $pngAbsoluteFilePath = $tempDir.$fileName;
             $urlRelativeFilePath = $tempDir.$fileName;
-            echo $link;    
+            
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
                     QRcode::png($link, $pngAbsoluteFilePath);
                 } 
 
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
-              echo "<p><a href='https://arthunt.000webhostapp.com/download2.php?path=$urlRelativeFilePath'>Download QRCODE</a></p>";
+              echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath'>Download QRCODE</a></p>";
        echo "    
        </div>
         </div>
