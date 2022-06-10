@@ -7,7 +7,7 @@ $thunt=$_SESSION['id_thunt'];
 
 	if (isset($_POST['add_riddle'])){
 			$sql = "INSERT INTO has (id_thunt,id_riddle,qrcode)
-			VALUES ('$thunt', ".$_POST["add_riddle"].","")";
+			VALUES ('$thunt', ".$_POST["add_riddle"].","not defined")";
 
 		mysqli_query($conn,$sql);
 
