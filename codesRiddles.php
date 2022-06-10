@@ -134,7 +134,7 @@ $tempDir = "qrcodes/";
             $fileName = 'riddle_t'.$thunt.'_r'.$number.'png';
             $pngAbsoluteFilePath = $tempDir.$fileName;
             $urlRelativeFilePath = $tempDir.$fileName;
-                
+            echo $link;    
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
                     QRcode::png($link, $pngAbsoluteFilePath);
