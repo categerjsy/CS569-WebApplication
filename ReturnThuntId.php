@@ -25,7 +25,7 @@ $idQueryTeam=mysqli_query($conn,"SELECT * FROM is_member,participate
  $teamname=-1;
  $name=mysqli_query($conn,"SELECT * FROM team WHERE id_team='$id_team'");
  while ($rown = mysqli_fetch_array($name, MYSQLI_ASSOC)) {
-    $name=$row["name"];
+    $name=$rown["name"];
  }
 
 
