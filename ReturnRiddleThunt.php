@@ -13,8 +13,6 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
             echo $rowr["text"];
             echo "*";
             echo $rowr["location_solution"];
-            echo"*";
-            echo $rowr["object_AR"];
             echo "*";
             echo $rowr["infotext"];
             echo "*";
