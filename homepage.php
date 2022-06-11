@@ -126,8 +126,8 @@ session_start ();
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
           swal({
-          title: "Success!",
-          text: "You created your treasurehut.That's amazing!Now lets add riddles!",
+          title: "<h1>Success!</h1>",
+          text: "<h2>You created your treasurehut.That's amazing!Now lets add riddles!</h2>",
           type: "success",
           timer: 2000,
           showConfirmButton: false
