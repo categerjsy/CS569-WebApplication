@@ -24,14 +24,15 @@ session_start ();
     <link rel="stylesheet" href="css/disclaimer.css" />
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Supermercado+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
-      body {
-      font-family: 'Gloria Hallelujah', cursive;
-      }
-      .swal-modal {
-        font-family: 'Gloria Hallelujah', cursive;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+    .swal-modal{
+      font-family: 'Kdam Thmor Pro', sans-serif;
+    }
     </style>
+
   </head>
   <body>
     <nav class="navbar">
