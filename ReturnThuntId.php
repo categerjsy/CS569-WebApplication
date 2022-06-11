@@ -1,6 +1,11 @@
 <?php
 include 'config.php';
-$thunt=$_POST["name"];
+$thunt="sdafghjk.m, auga";//$_POST["name"];
+$user="Maria";//$_POST["user"];
+$idQueryUser=mysqli_query($conn,"SELECT * FROM user WHERE username='$user'");
+ while ($rowu = mysqli_fetch_array($idQueryUser, MYSQLI_ASSOC)) {
+    $id_user=$rowu["id_user"];
+ }
 
 $id_thunt=-1;
 $idQuery=mysqli_query($conn,"SELECT * FROM treasure_hunt WHERE name='$thunt'");
@@ -8,5 +13,17 @@ $idQuery=mysqli_query($conn,"SELECT * FROM treasure_hunt WHERE name='$thunt'");
     $id_thunt=$row["id_thunt"];
  }
 
+$id_team=-1;
+$idQueryTeam=mysqli_query($conn,"SELECT id_team FROM is_member,participate
+                                 WHERE id_user='$id_user' AND role='leader' AND id_thunt='$id_thunt'
+                                 AND participate.id_team==is_member.id_team");
+ while ($rowt = mysqli_fetch_array($idQueryTeam, MYSQLI_ASSOC)) {
+   $id_team=$row["id_team"];
+
+ }
+
+echo "Treasure Hunt *";
 echo $id_thunt;
+echo "* Team *";
+echo $id_team;
 ?>
