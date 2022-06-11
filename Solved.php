@@ -9,7 +9,11 @@ $id_team=5;
 
 $sql = "INSERT INTO solve (id_riddle,id_thunt,id_team)
 VALUES ('$id_riddle','$id_thunt','$id_team')";
-$result=mysqli_query($conn,$sql);
+mysqli_query($conn,$sql);
+
+$checkQuery="SELECT * FROM solve WHERE id_riddle='$id_riddle' AND id_thunt='$id_thunt' AND id_team='$id_team'";
+$result=mysqli_query($conn,$checkQuery);
+
 if(mysqli_num_rows($result)==1)
 {
      echo "success";
