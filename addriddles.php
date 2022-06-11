@@ -67,7 +67,6 @@ session_start ();
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
       $text=$row['text'];
       $location_solution=$row['location_solution'];
-      $object=$row['object_AR'];
       $infotext=$row['infotext'];
       $points=$row['points'];
       $id_riddle=$row['id_riddle'];
@@ -85,14 +84,6 @@ session_start ();
           </div>
           <div class='col-75'>
             $location_solution
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's Object</p>
-          </div>
-          <div class='col-75'>
-            $object
           </div>
           </div>
           <div class='row'>
