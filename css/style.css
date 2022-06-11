@@ -16,6 +16,10 @@ input,
   
 }
 
+.swal-overlay {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
 
 .container {
   position: relative;

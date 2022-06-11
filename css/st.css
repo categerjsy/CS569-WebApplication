@@ -18,6 +18,10 @@ body {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
+.swal-overlay {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
 .container {
   max-width: 1200px;
   width: 90%;
