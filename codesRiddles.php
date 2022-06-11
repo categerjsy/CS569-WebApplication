@@ -82,7 +82,6 @@ $tempDir = "qrcodes/";
         $number=$number+1;
         $text=$rowr['text'];
         $location_solution=$rowr['location_solution'];
-        $object=$rowr['object_AR'];
         $infotext=$rowr['infotext'];
         $points=$rowr['points'];
         $link=$rowr['riddle_link'];
@@ -101,14 +100,6 @@ $tempDir = "qrcodes/";
           </div>
           <div class='col-75'>
             $location_solution
-          </div>
-          </div>
-          <div class='row'>
-          <div class='col-25'>
-            <p>Riddle's Object</p>
-          </div>
-          <div class='col-75'>
-            $object
           </div>
           </div>
           <div class='row'>

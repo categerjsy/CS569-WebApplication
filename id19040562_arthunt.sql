@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: localhost:3306
--- Χρόνος δημιουργίας: 10 Ιουν 2022 στις 07:06:59
+-- Χρόνος δημιουργίας: 11 Ιουν 2022 στις 14:36:21
 -- Έκδοση διακομιστή: 10.5.12-MariaDB
 -- Έκδοση PHP: 7.3.32
 
@@ -142,8 +142,7 @@ INSERT INTO `has` (`id_thunt`, `id_riddle`, `qrcode`) VALUES
 (19, 4, ''),
 (19, 5, ''),
 (19, 6, ''),
-(20, 1, 'qrcodes/riddle_t20_r1.png'),
-(20, 2, 'qrcodes/riddle_t20_r2.png'),
+(20, 2, 'qrcodes/riddle_t20_r1.png'),
 (21, 1, ''),
 (21, 2, ''),
 (21, 9, ''),
@@ -158,18 +157,19 @@ INSERT INTO `has` (`id_thunt`, `id_riddle`, `qrcode`) VALUES
 (25, 2, ''),
 (25, 3, ''),
 (25, 9, ''),
-(20, 12, 'qrcodes/riddle_t20_r3.png'),
-(20, 14, 'qrcodes/riddle_t20_r4.png'),
-(20, 15, 'qrcodes/riddle_t20_r5.png'),
-(20, 16, 'qrcodes/riddle_t20_r6.png'),
-(20, 4, 'qrcodes/riddle_t20_r7.png'),
-(20, 5, 'qrcodes/riddle_t20_r8.png'),
-(20, 8, 'qrcodes/riddle_t20_r9.png'),
-(20, 7, 'qrcodes/riddle_t20_r10.png'),
-(20, 11, 'qrcodes/riddle_t20_r11.png'),
-(20, 3, 'qrcodes/riddle_t20_r12.png'),
-(20, 18, 'qrcodes/riddle_t20_r13.png'),
-(20, 17, 'qrcodes/riddle_t20_r14.png');
+(20, 12, 'qrcodes/riddle_t20_r2.png'),
+(20, 14, 'qrcodes/riddle_t20_r3.png'),
+(20, 15, 'qrcodes/riddle_t20_r4.png'),
+(20, 16, 'qrcodes/riddle_t20_r5.png'),
+(20, 4, 'qrcodes/riddle_t20_r6.png'),
+(20, 5, 'qrcodes/riddle_t20_r7.png'),
+(20, 8, 'qrcodes/riddle_t20_r8.png'),
+(20, 7, 'qrcodes/riddle_t20_r9.png'),
+(20, 11, 'qrcodes/riddle_t20_r10.png'),
+(20, 3, 'qrcodes/riddle_t20_r11.png'),
+(20, 18, 'qrcodes/riddle_t20_r12.png'),
+(20, 17, 'qrcodes/riddle_t20_r13.png'),
+(20, 1, 'qrcodes/riddle_t20_r14.png');
 
 -- --------------------------------------------------------
 
@@ -292,7 +292,8 @@ INSERT INTO `produce` (`id_user`, `id_riddle`) VALUES
 (7, 15),
 (7, 16),
 (7, 17),
-(7, 18);
+(7, 18),
+(7, 19);
 
 -- --------------------------------------------------------
 
@@ -304,7 +305,6 @@ CREATE TABLE `riddle` (
   `id_riddle` int(11) NOT NULL,
   `text` varchar(255) NOT NULL,
   `location_solution` varchar(255) NOT NULL,
-  `object_AR` varchar(100) NOT NULL,
   `infotext` text NOT NULL,
   `points` float NOT NULL,
   `riddle_link` varchar(255) NOT NULL
@@ -314,25 +314,26 @@ CREATE TABLE `riddle` (
 -- Άδειασμα δεδομένων του πίνακα `riddle`
 --
 
-INSERT INTO `riddle` (`id_riddle`, `text`, `location_solution`, `object_AR`, `infotext`, `points`, `riddle_link`) VALUES
-(1, 'My first riddle\r\n      ', 'Liontaria Square ', 'BronzeCoin', 'Liontaria are in Heraklion!', 1, ''),
-(2, 'FSDVDF\r\n      ', 'SADFSGRDTDD', 'SilverCoin', 'DFCV DFDFV\r\n      ', 4, ''),
-(3, 'e\r\nn vbmn,.m,', 'fxdgcfhgjkhlj', 'GoldCoin', 'zcbnvmb,n\r\n      x', 1, ''),
-(4, '        Pleresghdjfgh\r\n      qewasgrfdhfjgkh', 'dfsghnm', 'GoldCoin', '\r\n      zcxvvb', 1, ''),
-(5, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'GoldCoin', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
-(6, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'GoldCoin', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
-(7, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'GoldCoin', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
-(8, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'GoldCoin', 'fbdfvfvd\r\n      sdvfbggfewfsvfsgdhjk', 14, 'https://localhost/CS569-WebApplication/participateTeam.php?id=8'),
-(9, 'dfghjfkg\r\n      ', 'sdfbgnhb', 'BronzeCoin', '        Plfvzdxbfgnchv bere\r\n      ADSfzdgfghmj ,bh', 4, 'https://localhost/CS569-WebApplication/linked.php?id=9'),
-(10, '        Pleaseczxvbncgfhmngj\r\n      ', 'xcvbfngmhbmn,', 'GoldCoin', 'vdxgfhcgjtfh', 7, 'https://localhost/CS569-WebApplication/linked.php?id=10'),
-(11, 'This is a demo riddle\r\n      ', '  Leonton Square', 'SilverCoin', '  Leonton Square (genitive), after the Venetian-era Morosini Fountain (popularly called \"τα Λιοντάρια\", \"The Lions\") in its midst, which features four lions supporting the main basin.', 12, 'https://localhost/CS569-WebApplication/linked.php?id=11'),
-(12, 'jhfjiseknsfjkmfneokld;mf end      ', 'asegdrhf', 'SilverCoin', 'gdlfkgporskgokordkgr', 3, 'https://arthunt.epizy.com/linked.php?id=12'),
-(13, 'gdhy5etgb tgrdbhrtsedfvhetrfv \r\n      dafsdg', 'erfgthrtg', 'SilverCoin', 'fgfhyrtgbytdghr\r\n      ', 7, 'https://arthunt.000webhostapp.com/Linked.php?id=13'),
-(14, 'Testing testing', 'tEsTing', 'GoldCoin', 'Testing testing', 6, 'https://arthunt.000webhostapp.com/Solved.php?id_riddle=14'),
-(15, 'htrgfbrtgbrrsfgerdbhtrgdb', 'ewfrbtg', 'BronzeCoin', 'sgrdherdgbfnhrt5dgtbr4fd\r\n      ', 6, 'https://arthunt.000webhostapp.com/Solved.php?id_riddle=15'),
-(16, 'dfghtrngtrfbhtrgfb  ', 'rrtrtrfdgd ', 'SilverCoin', 'dfggrdgfcbhfg ', 6, 'https://arthunt.000webhostapp.com/Solved.php?idr=16'),
-(17, 'sdzfghfjgkhl;jokp', 'dryhftjugkhli;op[', 'SilverCoin', 'gbpinp\r\n      awrsetrdytuiopu', 5, 'https://arthunt.000webhostapp.com/Solved.php?r=17'),
-(18, 'to test!!', 'to test', 'SilverCoin', 'to test\r\n      ', 5, 'https://arthunt.000webhostapp.com/Solved.php?r=18');
+INSERT INTO `riddle` (`id_riddle`, `text`, `location_solution`, `infotext`, `points`, `riddle_link`) VALUES
+(1, 'My first riddle\r\n      ', 'Liontaria Square ', 'Liontaria are in Heraklion!', 1, ''),
+(2, 'FSDVDF\r\n      ', 'SADFSGRDTDD', 'DFCV DFDFV\r\n      ', 4, ''),
+(3, 'e\r\nn vbmn,.m,', 'fxdgcfhgjkhlj', 'zcbnvmb,n\r\n      x', 1, ''),
+(4, '        Pleresghdjfgh\r\n      qewasgrfdhfjgkh', 'dfsghnm', '\r\n      zcxvvb', 1, ''),
+(5, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
+(6, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
+(7, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'fbdfvfvd\r\n      sdvfbggfewfsv', 14, 'not defined'),
+(8, '\r\n      XZCvgbhmn,km./', 'xcszdfghgj', 'fbdfvfvd\r\n      sdvfbggfewfsvfsgdhjk', 14, 'https://localhost/CS569-WebApplication/participateTeam.php?id=8'),
+(9, 'dfghjfkg\r\n      ', 'sdfbgnhb', '        Plfvzdxbfgnchv bere\r\n      ADSfzdgfghmj ,bh', 4, 'https://localhost/CS569-WebApplication/linked.php?id=9'),
+(10, '        Pleaseczxvbncgfhmngj\r\n      ', 'xcvbfngmhbmn,', 'vdxgfhcgjtfh', 7, 'https://localhost/CS569-WebApplication/linked.php?id=10'),
+(11, 'This is a demo riddle\r\n      ', '  Leonton Square', '  Leonton Square (genitive), after the Venetian-era Morosini Fountain (popularly called \"τα Λιοντάρια\", \"The Lions\") in its midst, which features four lions supporting the main basin.', 12, 'https://localhost/CS569-WebApplication/linked.php?id=11'),
+(12, 'jhfjiseknsfjkmfneokld;mf end      ', 'asegdrhf', 'gdlfkgporskgokordkgr', 3, 'https://arthunt.epizy.com/linked.php?id=12'),
+(13, 'gdhy5etgb tgrdbhrtsedfvhetrfv \r\n      dafsdg', 'erfgthrtg', 'fgfhyrtgbytdghr\r\n      ', 7, 'https://arthunt.000webhostapp.com/Linked.php?id=13'),
+(14, 'Testing testing', 'tEsTing', 'Testing testing', 6, 'https://arthunt.000webhostapp.com/Solved.php?id_riddle=14'),
+(15, 'htrgfbrtgbrrsfgerdbhtrgdb', 'ewfrbtg', 'sgrdherdgbfnhrt5dgtbr4fd\r\n      ', 6, 'https://arthunt.000webhostapp.com/Solved.php?id_riddle=15'),
+(16, 'dfghtrngtrfbhtrgfb  ', 'rrtrtrfdgd ', 'dfggrdgfcbhfg ', 6, 'https://arthunt.000webhostapp.com/Solved.php?idr=16'),
+(17, 'sdzfghfjgkhl;jokp', 'dryhftjugkhli;op[', 'gbpinp\r\n      awrsetrdytuiopu', 5, 'https://arthunt.000webhostapp.com/Solved.php?r=17'),
+(18, 'to test!!', 'to test', 'to test\r\n      ', 5, 'https://arthunt.000webhostapp.com/Solved.php?r=18'),
+(19, 'skata', 'skata', 'skata', 20, 'https://arthunt.000webhostapp.com/Solved.php?r=19');
 
 -- --------------------------------------------------------
 
@@ -355,7 +356,20 @@ INSERT INTO `solve` (`id_team`, `id_riddle`, `id_thunt`) VALUES
 (5, 6, 5),
 (5, 8, 5),
 (5, 8, 5),
-(5, 17, 5);
+(5, 17, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(5, 4, 5),
+(3, 4, 3),
+(3, 4, 3),
+(3, 4, 3),
+(3, 4, 3),
+(8, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -445,7 +459,7 @@ INSERT INTO `treasure_hunt` (`id_thunt`, `status`, `name`, `datetime`) VALUES
 (17, 'Created', 'jhkgftyghkhkgjkybkgnm', '2022-05-26 18:16:00'),
 (18, 'Created', 'adsfgb', '2022-06-02 18:37:00'),
 (19, 'Created', 'This is my demo treasure ', '2022-06-18 21:30:00'),
-(20, 'Created', 'This is a demo treasure ', '2022-08-18 22:10:00'),
+(20, 'Created', ',kjhuytrd', '2022-08-18 22:10:00'),
 (21, 'Created', 'rsegdhftjg hunt', '2022-06-25 20:33:00'),
 (22, 'Created', 'myn ', '2022-06-30 16:25:00'),
 (23, 'Created', 'this i my treasure hunt', '2022-06-30 12:10:00'),
@@ -519,7 +533,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT για πίνακα `riddle`
 --
 ALTER TABLE `riddle`
-  MODIFY `id_riddle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_riddle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT για πίνακα `team`
