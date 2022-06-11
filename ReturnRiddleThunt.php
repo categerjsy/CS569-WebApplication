@@ -2,7 +2,7 @@
 include 'config.php';
 session_start ();
 
-$thunt=20; //εδω καλο ειναι να μπει Post αλλιως Get το βλέπουμε
+$thunt=$_POST["thunt"]; //εδω καλο ειναι να μπει Post αλλιως Get το βλέπουμε
 
 
 $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$thunt'");
