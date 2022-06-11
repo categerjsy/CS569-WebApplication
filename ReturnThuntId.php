@@ -18,7 +18,7 @@ $idQueryTeam=mysqli_query($conn,"SELECT * FROM is_member,participate
                                  WHERE is_member.id_user='$id_user' AND is_member.role='leader' AND participate.id_thunt='$id_thunt'
                                  AND participate.id_team==is_member.id_team");
  while ($rowt = mysqli_fetch_array($idQueryTeam, MYSQLI_ASSOC)) {
-   $id_team=$row["id_team"];
+   $id_team=$rowt["id_team"];
 
  }
 
