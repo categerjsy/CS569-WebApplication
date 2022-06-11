@@ -25,6 +25,9 @@ session_start ();
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Supermercado+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>
+      body {
+      font-family: 'Gloria Hallelujah', cursive;
+      }
       .swal-modal {
         font-family: 'Gloria Hallelujah', cursive;
       }
