@@ -22,8 +22,8 @@ $idQueryTeam=mysqli_query($conn,"SELECT * FROM is_member,participate
 
  }
 
-echo "Treasure Hunt *";
+echo "TreasureHunt*";
 echo $id_thunt;
-echo "* Team *";
+echo "*Team*";
 echo $id_team;
 ?>
