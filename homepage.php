@@ -21,14 +21,15 @@ session_start ();
     />
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/disclaimer.css" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <style>
+    <link rel="stylesheet" href="css/sweetalert.css" />
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <!-- <style>
     @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
     .swal-modal{
       font-family: 'Kdam Thmor Pro', sans-serif;
     }
-    </style>
+    </style> -->
 
   </head>
   <body>
