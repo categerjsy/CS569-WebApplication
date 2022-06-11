@@ -79,7 +79,7 @@ session_start ();
         <input type="text" id="solution" name="solution" placeholder="Riddle's solution" required>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-25">
         <label for="objectAR">Object AR</label>
       </div>
@@ -90,7 +90,7 @@ session_start ();
           <option value="BronzeCoin">Bronze Coin</option>
         </select>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-25">
         <label for="textInfo">Information text</label>

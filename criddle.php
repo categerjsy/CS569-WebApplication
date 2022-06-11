@@ -4,13 +4,12 @@ session_start ();
 
 $riddleText=$_POST['riddleText'];
 $solution=$_POST['solution'];
-$object=$_POST['object'];
 $infoText=$_POST['infoText'];
 $number=$_POST['number'];
 
 
-$sql = "INSERT INTO riddle (text, location_solution ,object_AR ,infotext, points,riddle_link)
-VALUES ('$riddleText','$solution','$object','$infoText','$number','not defined')";
+$sql = "INSERT INTO riddle (text, location_solution,infotext, points,riddle_link)
+VALUES ('$riddleText','$solution','$infoText','$number','not defined')";
 mysqli_query($conn,$sql);
 $last_id = $conn->insert_id;
 $link='https://arthunt.000webhostapp.com/Solved.php?r='.$last_id;
