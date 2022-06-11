@@ -24,6 +24,11 @@ session_start ();
     <link rel="stylesheet" href="css/disclaimer.css" />
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&family=Supermercado+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <style>
+      .swal-modal {
+        font-family: 'Gloria Hallelujah', cursive;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -126,8 +131,8 @@ session_start ();
         <?php }?>
         <?php  if (isset($_GET["msg"]) && $_GET["msg"] == 'hunt') { ?>
           swal({
-          title: "<h1>Success!</h1>",
-          text: "<h2>You created your treasurehut.That's amazing!Now lets add riddles!</h2>",
+          title: "Success!",
+          text: "You created your treasurehut.That's amazing!Now lets add riddles!",
           type: "success",
           timer: 2000,
           showConfirmButton: false
