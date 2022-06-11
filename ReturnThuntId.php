@@ -13,7 +13,7 @@ $idQuery=mysqli_query($conn,"SELECT * FROM treasure_hunt WHERE name='$thunt'");
     $id_thunt=$row["id_thunt"];
  }
 
-$id_team=-1;
+
 $idQueryTeam=mysqli_query($conn,"SELECT * FROM is_member,participate
                                  WHERE is_member.id_user='$id_user' AND is_member.role='leader' AND participate.id_thunt='$id_thunt'
                                  AND participate.id_team=is_member.id_team");
@@ -22,8 +22,15 @@ $idQueryTeam=mysqli_query($conn,"SELECT * FROM is_member,participate
 
  }
 
+ $teamname=-1;
+ $name=mysqli_query($conn,"SELECT * FROM team WHERE id_team='$id_team'");
+ while ($rown = mysqli_fetch_array($name, MYSQLI_ASSOC)) {
+    $name=$row["name"];
+ }
+
+
 echo "TreasureHunt*";
 echo $id_thunt;
 echo "*Team*";
-echo $id_team;
+echo $team;
 ?>
