@@ -12,7 +12,9 @@ $solveQuery="SELECT * FROM solved WHERE id_thunt='$id_thunt' AND id_team='$id_te
 $solveResult=mysqli_query($conn,$solveQuery);
 $solved=mysqli_num_rows($solveResult);
 
-echo $solved+"/"+$total;
+echo $solved;
+echo "/";
+echo $total;
 
 
 ?>
