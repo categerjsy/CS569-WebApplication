@@ -22,6 +22,7 @@ session_start ();
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/disclaimer.css" />
+    <link rel="stylesheet" href="css/sweetalert.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -73,12 +74,10 @@ session_start ();
       <div class="col-25">
         <label for="number">Number of team players</label>
       </div>
-      <!-- <div class="col-75"> -->
         <div class="quantity">
         <input type="number" name="number" min="1" step="1" value="1">
         </div>
       </div>
-    <!-- </div> -->
     </br>
     <div class="row">
       <input type="submit" value="Create my team">
@@ -110,6 +109,5 @@ session_start ();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/number.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> 
 </html>

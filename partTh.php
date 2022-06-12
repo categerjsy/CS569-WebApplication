@@ -2,7 +2,6 @@
 include 'config.php';
 session_start ();
 
-//$_SESSION['URL']
 $id_hunt=$_SESSION["part_id"];
 
 

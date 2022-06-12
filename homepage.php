@@ -22,15 +22,6 @@ session_start ();
     <link rel="stylesheet" href="css/st.css" />
     <link rel="stylesheet" href="css/disclaimer.css" />
     <link rel="stylesheet" href="css/sweetalert.css" />
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-    <!-- <style>
-    @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
-
-    .swal-modal{
-      font-family: 'Kdam Thmor Pro', sans-serif;
-    }
-    </style> -->
-
   </head>
   <body>
     <nav class="navbar">
@@ -179,7 +170,5 @@ session_start ();
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">-->
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> 
 </html>

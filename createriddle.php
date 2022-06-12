@@ -23,7 +23,7 @@ session_start ();
     <link rel="stylesheet" href="css/form.css" />
     <link rel='stylesheet' href='sweetalert.css'>
     <link rel="stylesheet" href="css/disclaimer.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="css/sweetalert.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -79,18 +79,6 @@ session_start ();
         <input type="text" id="solution" name="solution" placeholder="Riddle's solution" required>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-25">
-        <label for="objectAR">Object AR</label>
-      </div>
-      <div class="col-75">
-        <select id="object" name="object">
-          <option value="GoldCoin">Gold Coin</option>
-          <option value="SilverCoin">Silver Coin</option>
-          <option value="BronzeCoin">Bronze Coin</option>
-        </select>
-      </div>
-    </div> -->
     <div class="row">
       <div class="col-25">
         <label for="textInfo">Information text</label>
@@ -105,13 +93,11 @@ session_start ();
       <div class="col-25">
         <label for="number">Points for treasure hunt</label>
       </div>
-      <!-- <div class="col-75"> -->
       </br>
         <div class="quantity">
         <input type="number" name="number" min="1" step="1" value="1">
         </div>
       </div>
-    <!-- </div> -->
     <div class="row">
       <input type="submit" onclick="fireSweetAlert()" value="Create Riddle">
     </div>
@@ -141,8 +127,7 @@ session_start ();
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> 
   <script src="js/number.js"></script>
   <script src="js/disablePreviousDates.js"></script>
   
