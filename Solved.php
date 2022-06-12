@@ -3,23 +3,31 @@
 include 'config.php';
 $id_riddle=$_GET["r"];
 //εδω καπως θα μπουν τα αντιστοιχα :3
-$id_thunt=$_POST["id_thunt"];
-$id_team=$_POST["id_team"];
+$id_thunt=5;//$_POST["id_thunt"];
+$id_team=5;//$_POST["id_team"];
 
 
-$sql = "INSERT INTO solve (id_riddle,id_thunt,id_team)
-VALUES ('$id_riddle','$id_thunt','$id_team')";
-mysqli_query($conn,$sql);
+
 
 $checkQuery="SELECT * FROM solve WHERE id_riddle='$id_riddle' AND id_thunt='$id_thunt' AND id_team='$id_team'";
 $result=mysqli_query($conn,$checkQuery);
 
 if(mysqli_num_rows($result)==1)
 {
-     echo "success";
+     echo "already in database";
 }
 else{
-    echo "failed";
+    $sql = "INSERT INTO solve (id_riddle,id_thunt,id_team)
+    VALUES ('$id_riddle','$id_thunt','$id_team')";
+    mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result)==1)
+    {
+        echo "success";
+    } else{
+        echo "failed";
+
+    }
+
 }
 
 ?>
