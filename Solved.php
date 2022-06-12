@@ -20,6 +20,7 @@ else{
     $sql = "INSERT INTO solve (id_riddle,id_thunt,id_team)
     VALUES ('$id_riddle','$id_thunt','$id_team')";
     mysqli_query($conn,$sql);
+    $result=mysqli_query($conn,$checkQuery);
     if(mysqli_num_rows($result)==1)
     {
         echo "success";
