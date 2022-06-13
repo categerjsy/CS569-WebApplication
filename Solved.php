@@ -3,8 +3,8 @@
 include 'config.php';
 $id_riddle=$_GET["r"];
 //εδω καπως θα μπουν τα αντιστοιχα :3
-$id_thunt=5;//$_POST["id_thunt"];
-$id_team=5;//$_POST["id_team"];
+$id_thunt=$_POST["id_thunt"];
+$id_team=$_POST["id_team"];
 
 
 

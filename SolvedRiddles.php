@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-$id_team=5;
-$id_thunt=20;
+$id_team=$_POST["id_team"];
+$id_thunt=$_POST["id_thunt"];
 
 $total=-1;
 $checkQuery="SELECT * FROM has WHERE id_thunt='$id_thunt'";
@@ -14,9 +14,26 @@ $solveQuery="SELECT * FROM solve WHERE id_thunt='$id_thunt' AND id_team='$id_tea
 $solveResult=mysqli_query($conn,$solveQuery);
 $solved=mysqli_num_rows($solveResult);
 
-echo $solved;
-echo "/";
-echo $total;
+$points=0;
+$riddles=mysqli_query($conn,"SELECT * FROM solve WHERE id_thunt='$id_thunt' AND id_team='$id_team'");
+ while ($row = mysqli_fetch_array($riddles, MYSQLI_ASSOC)) {
+    $id_riddle=$row["id_riddle"];
+    $point=mysqli_query($conn,"SELECT * FROM riddle WHERE id_riddle='$id_riddle'");
+    while ($rowp = mysqli_fetch_array($point, MYSQLI_ASSOC)) {
+        $points=$points+$rowp["points"];
+    }
+
+}
+if($solved!=$total){
+    echo $solved;
+    echo "/";
+    echo $total;
+    echo "*";   
+} else{
+    echo "Congratulations!";
+}
+
+
 
 
 ?>
