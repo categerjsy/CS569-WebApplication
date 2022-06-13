@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-$id_team=$_POST["id_team"];
-$id_thunt=$_POST["id_thunt"];
+$id_team=5;
+$id_thunt=20;
 
 $total=-1;
 $checkQuery="SELECT * FROM has WHERE id_thunt='$id_thunt'";
@@ -29,8 +29,11 @@ if($solved!=$total){
     echo "/";
     echo $total;
     echo "*";   
+    echo $points;
 } else{
     echo "Congratulations!";
+    echo "*";   
+    echo $points;
 }
 
 
