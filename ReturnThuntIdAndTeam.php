@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
-$thunt=$_POST["name"];
-$user=$_POST["user"];
+$thunt="Maria";//$_POST["name"];
+$user="sdafghjk.m, auga";//$_POST["user"];
 $idQueryUser=mysqli_query($conn,"SELECT * FROM user WHERE username='$user'");
  while ($rowu = mysqli_fetch_array($idQueryUser, MYSQLI_ASSOC)) {
     $id_user=$rowu["id_user"];
