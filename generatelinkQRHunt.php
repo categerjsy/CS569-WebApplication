@@ -113,7 +113,7 @@ window.onload = function ()
 {
   let qrcode = new QRCode(document.getElementById("qrcode"),
              {
-              text: "https://arthunt.000webhostapp.com/participateTHunt.php?id="+"<?php echo $thunt ?>",
+              text: "https://arthunt.000webhostapp.com/participateThunt.php?id="+"<?php echo $thunt ?>",
               width: 450,
               height: 450,
               colorDark : "#000000",
