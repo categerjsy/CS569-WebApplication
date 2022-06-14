@@ -66,8 +66,7 @@ session_start ();
         <label for="textRiddle">Riddle's text</label>
       </div>
       <div class="col-75">
-      <textarea id="riddleText" name="riddleText" rows="4" cols="50" required>
-        Please write your riddle's text here
+      <textarea id="riddleText" name="riddleText" rows="4" cols="50" placeholder="Please write your riddle's text here" required>
       </textarea>
       </div>
     </div>
@@ -84,8 +83,7 @@ session_start ();
         <label for="textInfo">Information text</label>
       </div>
       <div class="col-75">
-      <textarea id="infoText" name="infoText" rows="4" cols="50" required>
-        Please write your information text here
+      <textarea id="infoText" name="infoText" rows="4" cols="50" placeholder="Please write your information text here" required>
       </textarea>
       </div>
     </div>
