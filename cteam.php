@@ -23,6 +23,14 @@ else{
     $sql2 = "INSERT INTO is_member (id_user,id_team,role)
     VALUES ('$user','$last_id','leader')";
     mysqli_query($conn,$sql2);
-    header("Location: homepage.php?msg=team");
+
+    if(isset($_SESSION['URL'])==NULL) {
+    header("Location: homepage.php?msg=team");	
+    }
+    else {
+    $url=$_SESSION['URL'];
+    header("location:".$url); 	
+    }
+    
 }
 ?>

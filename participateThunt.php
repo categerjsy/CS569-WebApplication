@@ -8,12 +8,21 @@ session_start ();
   header("Location: index.php"); 
  }
  if (!isset($_SESSION["username"])==NULL){
-    unset($_SESSION['URL']);
-    $_SESSION["part_id"]=$_GET["id"];
-
     $diff=$_SESSION["age"];
+    $user=$_SESSION["username"];
     if($diff>14){
-      header("location:selectTeam.php"); 
+ 
+      $checkQuery="SELECT * FROM is_member WHERE username='$user' AND role='leader'";
+      $result=mysqli_query($conn,$checkQuery);
+    
+      if(mysqli_num_rows($result)==0){
+      header("location:createteam.php?msg=create");
+      } else {
+      unset($_SESSION['URL']);
+      $_SESSION["part_id"]=$_GET["id"];
+      header("location:selectTeam.php");
+      }
+       
     }else {
       header("location:homepage.php?msg=age");
     }
