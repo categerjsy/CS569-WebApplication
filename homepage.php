@@ -104,6 +104,17 @@ session_start ();
   </body>
   <script>
     window.onload = function mess() {//na allaksw name
+      <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'age') { ?>
+        swal({
+          title: "You are to young..!",
+          text: "Sorry...you are to young to have your own team to participate to a treasure hunt...!",
+          type: "info",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/homepage.php";
+        });
+        <?php }?>
       <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'riddle') { ?>
         swal({
           title: "Good job!",
