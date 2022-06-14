@@ -50,13 +50,13 @@ $tempDir = "qrcodes/";
               <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
-              echo "<li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
+              echo "<li><a href='userriddle.php'>View Riddle</a></li>
+                    <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
                     <li><a href='createteam.php'>Create Team</a></li>
-                    <li><a href='createthunt.php'>Create Hunt</a></li>";
+                    <li><a href='createthunt.php'>Create Hunt</a></li>
+                    <li><a href='treasurehunts.php'>Treasure hunt</a></li>";
               }
               ?>
-              
-              <li><a href='treasurehunts.php'>Treasure hunt</a></li>
               <li><a href="signout.php">Sign out</a></li>
           </ul>
           <h1 class="logo">AR TS</h1>

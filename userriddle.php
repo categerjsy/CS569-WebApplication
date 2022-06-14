@@ -1,11 +1,11 @@
 <?php
 include 'config.php';
 session_start ();
+
  if (isset($_SESSION['username'])==NULL){
   header('Location: index.php');
  }
-$id_thunt=$_SESSION['id_thunt'];
-
+$id=$_SESSION["id_user"];
 ?>
 <html lang='en'>
   <head>
@@ -23,6 +23,9 @@ $id_thunt=$_SESSION['id_thunt'];
     <link rel='stylesheet' href='css/st.css' />
     <link rel='stylesheet' href='css/form.css' />
     <link rel="stylesheet" href="css/disclaimer.css" />
+    <script type='text/javascript' src='http://static.runoob.com/assets/qrcode/qrcode.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/button.css' />
   </head>
   <body>
     <nav class='navbar'>
@@ -35,18 +38,17 @@ $id_thunt=$_SESSION['id_thunt'];
           </div>
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
-              <li><a href='teams.php'>Teams</a></li>
+              <li><a href='riddles.php'>riddles</a></li>
               <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
               echo "<li><a href='userriddle.php'>View Riddle</a></li>
                     <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
-                    <li><a href='createteam.php'>Create Team</a></li>
+                    <li><a href='createriddle.php'>Create riddle</a></li>
                     <li><a href='createthunt.php'>Create Hunt</a></li>
                     <li><a href='treasurehunts.php'>Treasure hunt</a></li>";
               }
               ?>
-
               <li><a href="signout.php">Sign out</a></li>
           </ul>
           <h1 class='logo'>AR TS</h1>
@@ -54,54 +56,53 @@ $id_thunt=$_SESSION['id_thunt'];
   </nav>
     <section class='showcase-area' id='showcase'>
       <div class='showcase-container'>
-        <h1 class='main-title' id='home'>Edit your treasure hunt!</h1>
+        <h1 class='main-title' id='home'>Let's see your riddles!</h1>
         <p>Solve riddles and pick up coins in your treasure chest!</p>
       </div>
     </section>
 
     <section id='about'>
     <div class='container'>
-    
+    </br></br>
+    <h2>Your riddles:</h2>
     <?php
-    
-    $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE id_thunt='$id_thunt'");
-    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-        $name=$row["name"];
-        $datetime=$row["datetime"];
-        $dt=date('Y-m-d\TH:i', strtotime($datetime));
-        echo 
-            "<form action='edthunt.php' method='post'>
-                <div class='row'>
-                <div class='col-25'>
-                    <label for='thname'>Threasure Hunt Name</label>
-                </div>
-                <div class='col-75'>
-                    <input type='text' id='thname' name='thname' value='$name' required>
-                </div>
-                </div>
-                <div class='row'>
-                <div class='col-25'>
-                    <label for='date'>Date</label>
-                </div>
-                <div class='col-75'>
-                <input type='datetime-local' id='datetime' name='datetime' value='$dt' required>
-                </div>
-                </div>
-                </div>
-                <div class='row'>
-                <input type='submit' value='Edit Treasure Hunt'>
-                </div>
-            </form>";
-    }
+    $test=0;
+    $my_user=$_SESSION["id_user"] ;
 
-  ?>
-</div>
+    $query = mysqli_query($conn, "SELECT * FROM produce WHERE id_user='$my_user'");
+    while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+      $id_riddle=$row['id_riddle']; 
+      $queryt = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$id_riddle'");
+      while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
+        $riddles_name=$rowt['name'];
+        $test=1;
+      echo "<div class='row'>
+            <div class='col-25'>
+              <p>riddle's Name</p>
+            </div>
+            <div class='col-75'>
+            $riddles_name
+            </div>
+            </div> 
+            <hr>";
+      }
+    }
+    if ($test==0) { 
+      
+      echo "</br></br><h3>Please create a riddle! It will really help us! :)<h3></br></br>";
+    }
+          
+    ?>
+    </br></br>
+    </div>
     </section>
     <footer id='footer'>
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-  
-   <script src='js/number.js'></script>
-   <script src='js/disablePreviousDates.js'></script>
+
+ 
+  <script src='https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js'></script>
+  <script src='js/number.js'></script>
+  <script src='js/disablePreviousDates.js'></script>
 </html>

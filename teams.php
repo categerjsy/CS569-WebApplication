@@ -42,13 +42,13 @@ $id=$_SESSION["id_user"];
               <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
-              echo "<li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
+              echo "<li><a href='userriddle.php'>View Riddle</a></li>
+                    <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
                     <li><a href='createteam.php'>Create Team</a></li>
-                    <li><a href='createthunt.php'>Create Hunt</a></li>";
+                    <li><a href='createthunt.php'>Create Hunt</a></li>
+                    <li><a href='treasurehunts.php'>Treasure hunt</a></li>";
               }
               ?>
-              
-              <li><a href='treasurehunts.php'>Treasure hunt</a></li>
               <li><a href="signout.php">Sign out</a></li>
           </ul>
           <h1 class='logo'>AR TS</h1>
@@ -66,7 +66,7 @@ $id=$_SESSION["id_user"];
     </br></br>
     <h2>Your teams:</h2>
     <?php
-  
+    $test=0;
     $my_user=$_SESSION["id_user"] ;
 
     $query = mysqli_query($conn, "SELECT * FROM is_member WHERE id_user='$my_user'");
@@ -76,7 +76,7 @@ $id=$_SESSION["id_user"];
       $queryt = mysqli_query($conn, "SELECT * FROM team WHERE id_team='$id_team'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
         $teams_name=$rowt['name'];
-      
+        $test=1;
       echo "<div class='row'>
             <div class='col-25'>
               <p>Team's Name</p>
@@ -95,7 +95,7 @@ $id=$_SESSION["id_user"];
             </div><hr>";
       }
     }
-    if ($row) { 
+    if ($test==0) { 
       
       echo "</br></br><h3>You are not a member of any team! :/<h3></br></br>";
     }
