@@ -144,7 +144,7 @@ $id=$_SESSION["id_user"];
           timer: 2000,
           showConfirmButton: false
         }, function(){
-              window.location.href = "/homepage.php";
+              window.location.href = "/userriddle.php";
         });
         <?php }?>  
     }
