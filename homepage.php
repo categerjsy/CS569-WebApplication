@@ -105,11 +105,15 @@ session_start ();
   <script>
     window.onload = function mess() {//na allaksw name
       <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'riddle') { ?>
-        Swal.fire(
-            'Good job!',
-            'Your riddle is ready!',
-            'success'
-        )
+        swal({
+          title: "Good job!",
+          text: "Your riddle is ready!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/homepage.php";
+        });
         <?php }?>
         <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'team') { ?>
         swal({
