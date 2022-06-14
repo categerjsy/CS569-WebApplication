@@ -13,9 +13,9 @@ session_start ();
 
     $diff=$_SESSION["age"];
     if($diff>14){
-      header("location:homepage.php?msg=age");
-    }else {
       header("location:selectTeam.php"); 
+    }else {
+      header("location:homepage.php?msg=age");
     }
  }
 
