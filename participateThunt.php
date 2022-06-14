@@ -13,7 +13,7 @@ session_start ();
     if($diff>14){
  
 
-    $query = mysqli_query($conn,"SELECT * FROM is_member WHERE username='$user' AND role='leader'");
+    $query = mysqli_query($conn,"SELECT * FROM is_member WHERE id_user='$user' AND role='leader'");
     $rt = mysqli_num_rows($query);
     
       if($rt==0){
