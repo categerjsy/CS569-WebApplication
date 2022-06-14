@@ -22,6 +22,6 @@ $qry = mysqli_query($conn, $sql);
 $sql1 = "INSERT INTO produce (id_user,id_riddle)
 VALUES ('$user','$last_id')";
 mysqli_query($conn,$sql1);
-header("Location: homepage.php?msg=riddle");
+header("Location: userriddle.php?msg=riddle");
 
 ?>

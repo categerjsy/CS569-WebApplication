@@ -26,6 +26,7 @@ $id=$_SESSION["id_user"];
     <script type='text/javascript' src='http://static.runoob.com/assets/qrcode/qrcode.min.js'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='css/button.css' />
+    <link rel="stylesheet" href="css/sweetalert.css" />
   </head>
   <body>
     <nav class='navbar'>
@@ -38,7 +39,7 @@ $id=$_SESSION["id_user"];
           </div>
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
-              <li><a href='riddles.php'>riddles</a></li>
+              <li><a href='teams.php'>Teams</a></li>
               <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
@@ -133,7 +134,25 @@ $id=$_SESSION["id_user"];
   </body>
 
  
-  <script src='https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js'></script>
+  <script>
+    window.onload = function mess() {
+      <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'riddle') { ?>
+        swal({
+          title: "Good job!",
+          text: "Your riddle is ready!",
+          type: "success",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/homepage.php";
+        });
+        <?php }?>  
+    }
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> 
   <script src='js/number.js'></script>
   <script src='js/disablePreviousDates.js'></script>
 </html>
