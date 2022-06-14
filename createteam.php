@@ -103,7 +103,17 @@ session_start ();
               window.location.href = "/createteam.php";
         });
         <?php }?>
-  
+        <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'create') { ?>
+        swal({
+          title: "Oops...!",
+          text: "You need to create a team and then visit the site again to participate to a treasure hunt!",
+          type: "info",
+          timer: 2000,
+          showConfirmButton: true
+        }, function(){
+              window.location.href = "/createteam.php";
+        });
+        <?php }?>
     }
     </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
