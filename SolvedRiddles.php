@@ -24,17 +24,13 @@ $riddles=mysqli_query($conn,"SELECT * FROM solve WHERE id_thunt='$id_thunt' AND 
     }
 
 }
-if($solved!=$total){
-    echo $solved;
-    echo "/";
-    echo $total;
-    echo "*";   
-    echo $points;
-} else{
-    echo "Congratulations!";
-    echo "*";   
-    echo $points;
-}
+
+echo $solved;
+echo "/";
+echo $total;
+echo "*";   
+echo $points;
+
 
 
 
