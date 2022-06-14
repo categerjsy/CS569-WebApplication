@@ -9,7 +9,7 @@ session_start ();
  }
  if (!isset($_SESSION["username"])==NULL){
     $diff=$_SESSION["age"];
-    $user=$_SESSION["username"];
+    $user=$_SESSION["id_user"];
     if($diff>14){
  
 
