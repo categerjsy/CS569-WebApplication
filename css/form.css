@@ -1,4 +1,4 @@
-input[type=text], select/*, textarea*/{
+input[type=text], select, textarea{
     font-family: 'Gloria Hallelujah', cursive;
     width: 100%;
     padding: 12px;

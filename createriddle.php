@@ -37,7 +37,7 @@ session_start ();
           <ul class="menu-items">
               <li><a href="homepage.php">Home</a></li>
               <li><a href='teams.php'>Teams</a></li>
-              <?php 
+             <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
               echo "<li><a href='userriddle.php'>View Riddle</a></li>
@@ -66,7 +66,8 @@ session_start ();
         <label for="textRiddle">Riddle's text</label>
       </div>
       <div class="col-75">
-      <textarea id="riddleText" name="riddleText" rows="4" cols="50" placeholder="Please write your riddle's text here" required>
+      <textarea id="riddleText" name="riddleText" rows="4" cols="50" required>
+        Please write your riddle's text here
       </textarea>
       </div>
     </div>
@@ -83,7 +84,8 @@ session_start ();
         <label for="textInfo">Information text</label>
       </div>
       <div class="col-75">
-      <textarea id="infoText" name="infoText" rows="4" cols="50" placeholder="Please write your information text here" required>
+      <textarea id="infoText" name="infoText" rows="4" cols="50" required>
+        Please write your information text here
       </textarea>
       </div>
     </div>
