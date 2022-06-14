@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-$id_team=5;//$_POST["team"];
-$id_thunt=20;//$_POST["thunt"];
+$id_team=$_POST["team"];
+$id_thunt=$_POST["thunt"];
 
 $total=-1;
 $checkQuery="SELECT * FROM has WHERE id_thunt='$id_thunt'";
