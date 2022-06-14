@@ -108,7 +108,7 @@ session_start ();
           title: "Oops...!",
           text: "You need to create a team and then visit the site again to participate to a treasure hunt!",
           type: "info",
-          timer: 2000,
+          timer: 5000,
           showConfirmButton: true
         }, function(){
               window.location.href = "/createteam.php";
