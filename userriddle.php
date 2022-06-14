@@ -74,17 +74,48 @@ $id=$_SESSION["id_user"];
       $id_riddle=$row['id_riddle']; 
       $queryt = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$id_riddle'");
       while ($rowt = mysqli_fetch_array($queryt, MYSQLI_ASSOC)) {
-        $riddles_name=$rowt['name'];
         $test=1;
+        $text=$rowt['text'];
+        $location_solution=$rowt['location_solution'];
+        $infotext=$rowt['infotext'];
+        $points=$rowt['points'];
+        $id_riddle=$rowt['id_riddle'];
       echo "<div class='row'>
             <div class='col-25'>
-              <p>riddle's Name</p>
+              <p>Riddle's Text</p>
             </div>
             <div class='col-75'>
-            $riddles_name
+              $text
             </div>
-            </div> 
-            <hr>";
+            </div>
+            <div class='row'>
+            <div class='col-25'>
+              <p>Riddle's solution</p>
+            </div>
+            <div class='col-75'>
+              $location_solution
+            </div>
+            </div>
+            <div class='row'>
+            <div class='col-25'>
+              <p>Riddle's Information</p>
+            </div>
+            <div class='col-75'>
+              $infotext
+            </div>
+            </div>
+            <div class='row'>
+            <div class='col-25'>
+              <p>Riddle's point</p>
+            </div>
+            <div class='col-75'>
+              $points
+            </div>
+            </div>
+            <div class='row'>
+            <div class='col-25'>
+            </div>
+            <div class='col-75'>";
       }
     }
     if ($test==0) { 
