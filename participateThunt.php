@@ -12,10 +12,11 @@ session_start ();
     $user=$_SESSION["username"];
     if($diff>14){
  
-      $checkQuery="SELECT * FROM is_member WHERE username='$user' AND role='leader'";
-      $result=mysqli_query($conn,$checkQuery);
+
+    $query = mysqli_query($conn,"SELECT * FROM is_member WHERE username='$user' AND role='leader'");
+    $rt = mysqli_num_rows($query);
     
-      if(mysqli_num_rows($result)==0){
+      if($rt==0){
       header("location:createteam.php?msg=create");
       } else {
       unset($_SESSION['URL']);
