@@ -369,7 +369,7 @@ h4{
   }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
+@media (orientation: landscape) and (max-height: 800px) {
   .showcase-area {
     height: 50vmax;
   }
