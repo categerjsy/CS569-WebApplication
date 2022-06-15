@@ -336,7 +336,7 @@ h4{
   }
 } */
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   html {
     font-size: 65%;
   }
@@ -359,7 +359,7 @@ h4{
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1200px) {
+@media (min-width: 950px) and (max-width: 1200px) {
   .img-container h3 {
     font-size: 1.5rem;
   }

@@ -40,7 +40,7 @@ session_start ();
              <?php 
               $diff=$_SESSION["age"];
               if($diff>14){
-              echo "<li><a href='userriddle.php'>View Riddle</a></li>
+              echo "<li><a href='userriddle.php'>Riddles</a></li>
                     <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
                     <li><a href='createteam.php'>Create Team</a></li>
                     <li><a href='createthunt.php'>Create Hunt</a></li>
