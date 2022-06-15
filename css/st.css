@@ -296,8 +296,8 @@ h4{
   .logo {
     position: absolute;
     top: 5px;
-    right: 15px;
-    font-size: 2rem;
+    right: 10px;
+    font-size: 1rem;
   }
 
   .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -336,7 +336,7 @@ h4{
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   html {
     font-size: 65%;
   }
