@@ -66,7 +66,7 @@ h4{
   background: #F4A026;
   color: #000;
   opacity: 0.85;
-  height: 50px;
+  height: 150px;
   z-index: 12;
 }
 
@@ -276,7 +276,7 @@ h4{
   .navbar .menu-items {
     padding-top: 100px;
     background: #F4A026;
-    height: 400vh;
+    height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
     display: flex;
