@@ -18,6 +18,9 @@ body {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
+.swal2-popup {
+  font-family: 'Gloria Hallelujah', cursive;
+}
 
 .container {
   max-width: 1200px;
@@ -208,7 +211,7 @@ h4{
 
 /* ......../ media query /.......... */
 
-@media (max-width: 1024px) {
+@media (max-width:1050px){
   .navbar {
     opacity: 0.95;
   }
