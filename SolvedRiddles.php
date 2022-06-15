@@ -1,13 +1,18 @@
 <?php
 include 'config.php';
 
-$id_team=$_POST["team"];
+$team=$_POST["team"];
 $id_thunt=$_POST["thunt"];
 
 $total=-1;
 $checkQuery="SELECT * FROM has WHERE id_thunt='$id_thunt'";
 $result=mysqli_query($conn,$checkQuery);
 $total=mysqli_num_rows($result);
+
+$idQuery=mysqli_query($conn,"SELECT * FROM team WHERE name='$team'");
+ while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
+    $id_team=$row["id_team"];
+ }
 
 $solved=0;
 $solveQuery="SELECT * FROM solve WHERE id_thunt='$id_thunt' AND id_team='$id_team'";
