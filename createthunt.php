@@ -47,7 +47,7 @@ session_start ();
               ?>
               <li><a href="signout.php">Sign out</a></li>
           </ul>
-          <h1 class="logo">AR TS</h1>
+          <h1 class="logo">TH</h1>
       </div>
   </nav>
     <section class="showcase-area" id="showcase">
