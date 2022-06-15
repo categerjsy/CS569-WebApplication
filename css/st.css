@@ -338,18 +338,18 @@ h4{
 
 @media (max-width: 800px) {
   html {
-    font-size: 65%;
+    font-size: 50%;
   }
 
   .navbar .menu-items li{
-      font-size: 1.6rem;
+      font-size: 1rem;
   }
 
   .logo {
     position: absolute;
     top: 06px;
     right: 5px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .navbar .menu-items li {
@@ -359,7 +359,7 @@ h4{
   }
 }
 
-/* @media (min-width: 950px) and (max-width: 1200px) {
+@media (min-width: 950px) and (max-width: 1200px) {
   .img-container h3 {
     font-size: 1.5rem;
   }
@@ -367,7 +367,7 @@ h4{
   .img-container .btn {
     font-size: 0.7rem;
   }
-} */
+}
 
 @media (orientation: landscape) and (max-height: 500px) {
   .showcase-area {
