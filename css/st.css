@@ -211,7 +211,7 @@ h4{
 
 /* ......../ media query /.......... */
 
-@media (max-width: 1000px) {
+@media (max-width: 1250px) {
   .navbar {
     opacity: 0.95;
   }
