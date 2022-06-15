@@ -211,7 +211,7 @@ h4{
 
 /* ......../ media query /.......... */
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 992px) {
   .navbar {
     opacity: 0.95;
   }
@@ -336,7 +336,7 @@ h4{
   } */
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   html {
     font-size: 65%;
   }
