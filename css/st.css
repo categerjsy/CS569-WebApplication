@@ -276,7 +276,7 @@ h4{
   .navbar .menu-items {
     padding-top: 100px;
     background: #F4A026;
-    height: 100vh;
+    height: 400vh;
     max-width: 300px;
     transform: translate(-150%);
     display: flex;
@@ -318,7 +318,7 @@ h4{
 
   /* ......./ food /......... */
 
-  /* .food-container {
+  .food-container {
     flex-direction: column;
     align-items: stretch;
   }
@@ -333,10 +333,10 @@ h4{
 
   .img-container {
     margin: 0;
-  } */
+  }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   html {
     font-size: 65%;
   }
