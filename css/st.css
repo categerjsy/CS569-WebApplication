@@ -348,8 +348,8 @@ h4{
   .logo {
     position: absolute;
     top: 06px;
-    right: 15px;
-    font-size: 3rem;
+    right: 5px;
+    font-size: 1.5rem;
   }
 
   .navbar .menu-items li {
