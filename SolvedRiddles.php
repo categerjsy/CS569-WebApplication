@@ -2,9 +2,17 @@
 include 'config.php';
 
 $team=$_POST["team"];
-$id_thunt=$_POST["thunt"];
+$thunt=$_POST["thunt"];
+
 
 $total=-1;
+
+
+$idQueryTH=mysqli_query($conn,"SELECT * FROM treasure_hunt WHERE name='$thunt'");
+ while ($row = mysqli_fetch_array($idQueryTH, MYSQLI_ASSOC)) {
+    $id_thunt=$row["id_thunt"];
+ }
+
 $checkQuery="SELECT * FROM has WHERE id_thunt='$id_thunt'";
 $result=mysqli_query($conn,$checkQuery);
 $total=mysqli_num_rows($result);
