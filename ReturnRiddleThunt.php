@@ -21,5 +21,6 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo $rowr["infotext"];
             echo "*";
             echo $rowr["points"];
+            echo "*";
          }
     }
