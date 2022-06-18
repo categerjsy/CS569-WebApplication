@@ -127,13 +127,14 @@ $tempDir = "qrcodes/";
             <p>Please save this QRCode for your treasure hunt.</p>
             </div>
             <div class='col-75'>";
+            
             $fileName = 'riddle_t'.$thunt.'_r'.$number.'.png';
             $pngAbsoluteFilePath = $tempDir.$fileName;
             $urlRelativeFilePath = $tempDir.$fileName;
             
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
-                    QRcode::png($link, $pngAbsoluteFilePath);
+                    QRcode::png($link, $pngAbsoluteFilePath, QR_ECLEVEL_L, 4);
                 } 
               echo '<div class="row"><div class="col-25">';
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
