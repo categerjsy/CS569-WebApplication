@@ -134,7 +134,7 @@ $tempDir = "qrcodes/";
             
                 // generating
                 if (!file_exists($pngAbsoluteFilePath)) {
-                    QRcode::png($link, $pngAbsoluteFilePath, QR_ECLEVEL_L, 4);
+                    QRcode::png($link, $pngAbsoluteFilePath, QR_ECLEVEL_L, 10);
                 } 
               echo '<div class="row"><div class="col-25">';
               echo '<img id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
