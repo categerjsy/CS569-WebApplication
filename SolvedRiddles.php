@@ -1,8 +1,8 @@
 <?php
 include 'config.php';
 
-$team="Panos Team";//$_POST["team"];
-$thunt="Demo 2";//$_POST["thunt"];
+$team=$_POST["team"];
+$thunt=$_POST["thunt"];
 
 
 $total=-1;
