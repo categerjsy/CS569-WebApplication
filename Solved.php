@@ -14,7 +14,7 @@ $idQuery=mysqli_query($conn,"SELECT * FROM team WHERE name='$team'");
 $checkQuery="SELECT * FROM solve WHERE id_riddle='$id_riddle' AND id_thunt='$id_thunt' AND id_team='$id_team'";
 $result=mysqli_query($conn,$checkQuery);
 
-if(mysqli_num_rows($result)==1)
+if(mysqli_num_rows($result)>=1)
 {
      echo "already in database";
 }
