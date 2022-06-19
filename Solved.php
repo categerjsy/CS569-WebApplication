@@ -3,8 +3,8 @@
 include 'config.php';
 $id_riddle=$_GET["r"];
 //εδω καπως θα μπουν τα αντιστοιχα :3
-$id_thunt=$_POST["id_thunt"];
-$team=$_POST["team"];
+$id_thunt=14;//$_POST["id_thunt"];
+$team="First Team";//$_POST["team"];
 
 $idQuery=mysqli_query($conn,"SELECT * FROM team WHERE name='$team'");
  while ($row = mysqli_fetch_array($idQuery, MYSQLI_ASSOC)) {
