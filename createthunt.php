@@ -87,7 +87,24 @@ session_start ();
       <h2>AR Treasure Hunt &copy; </h2>
     </footer>
   </body>
-  
-   <script src="js/number.js"></script>
-   <script src="js/disablePreviousDates.js"></script>
+  <script>
+    window.onload = function mess() {//na allaksw name
+      
+        <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'tryagain') { ?>
+        swal({
+          title: "Oops...!",
+          text: "A treasure hunt has this name, try a new one!",
+          type: "error",
+          timer: 2000,
+          showConfirmButton: false
+        }, function(){
+              window.location.href = "/createthunt.php";
+        });
+        <?php }?>
+    }
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/number.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script> 
 </html>
