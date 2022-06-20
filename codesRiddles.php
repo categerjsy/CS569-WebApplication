@@ -137,7 +137,7 @@ $tempDir = "qrcodes/";
                     QRcode::png($link, $pngAbsoluteFilePath, QR_ECLEVEL_H, 10);
                 } 
               echo '<div class="row"><div class="col-25">';
-              echo '<img width='100' height='100' id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
+              echo '<img width="100" height="100" id="'.$number.'" src="'.$urlRelativeFilePath.'" />';
               echo "</div><div class='col-75'>";
               echo "<p><a href='https://arthunt.000webhostapp.com/download.php?path=$urlRelativeFilePath' ><img  src='img/download-svgrepo-com.svg'  width='25' height='25'/>QRCode riddle</a></p>";
               $sqli = "UPDATE has SET qrcode='$urlRelativeFilePath' WHERE id_thunt='$thunt' AND id_riddle='$riddle'";
