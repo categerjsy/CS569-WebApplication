@@ -45,7 +45,7 @@ $id=$_SESSION["id_user"];
               if($diff>14){
               echo "<li><a href='userriddle.php'>Riddles</a></li>
                     <li><a href='createriddle.php?msg=first'>Create Riddle</a></li>
-                    <li><a href='createriddle.php'>Create riddle</a></li>
+                    <li><a href='createriddle.php'>Create Team</a></li>
                     <li><a href='createthunt.php'>Create Hunt</a></li>
                     <li><a href='treasurehunts.php'>Treasure hunt</a></li>";
               }
