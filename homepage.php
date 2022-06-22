@@ -107,7 +107,7 @@ session_start ();
       <?php if (isset($_GET["msg"]) && $_GET["msg"] == 'age') { ?>
         swal({
           title: "You are to young..!",
-          text: "Sorry...you are to young to have your own team to participate to a treasure hunt...!",
+          text: "Sorry...you are to young to have your own team!",
           type: "info",
           timer: 2000,
           showConfirmButton: false
