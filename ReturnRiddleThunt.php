@@ -2,7 +2,7 @@
 include 'config.php';
 session_start ();
 
-$name_thunt="Demo 2";//$_POST["thunt"];
+$name_thunt=$_POST["thunt"];
 
 $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE name='$name_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
@@ -22,11 +22,11 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo "*";
             echo $rowr["points"];
             echo "*";
-            echo "riddle_t";
-            echo $id_thunt;
-            echo "_r";
-            echo $number;
-            echo "*";
-            $number++;
+            // echo "riddle_t";
+            // echo $id_thunt;
+            // echo "_r";
+            // echo $number;
+            // echo "*";
+            // $number++;
          }
     }
