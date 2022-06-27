@@ -22,11 +22,11 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo "*";
             echo $rowr["points"];
             echo "*";
-            // echo "riddle_t";
-            // echo $id_thunt;
-            // echo "_r";
-            // echo $number;
-            // echo "*";
-            // $number++;
+            echo "riddle_t";
+            echo $id_thunt;
+            echo "_r";
+            echo $number;
+            echo "*";
+            $number++;
          }
     }
