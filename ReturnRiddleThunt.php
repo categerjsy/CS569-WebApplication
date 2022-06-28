@@ -12,6 +12,7 @@ $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE name='$name_thun
 $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $riddle=$row["id_riddle"];
+        $png=str_replace("qrcodes/"," ",$row["qrcode"]);
         $queryr = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$riddle'");
          while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
             echo $rowr["text"];
@@ -22,7 +23,7 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo "*";
             echo $rowr["points"];
             echo "*";
-            echo str_replace("qrcodes/"," ",$row["qrcode"]);
+            echo str_replace(".png"," ",$png);;
             echo "*";
          }
     }
