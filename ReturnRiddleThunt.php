@@ -2,13 +2,13 @@
 include 'config.php';
 session_start ();
 
-$name_thunt=$_POST["thunt"];
+$name_thunt=14;//$_POST["thunt"];
 
 $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE name='$name_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $id_thunt=$row["id_thunt"];
     }
-$number=1;
+
 $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $riddle=$row["id_riddle"];
@@ -22,11 +22,7 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo "*";
             echo $rowr["points"];
             echo "*";
-            echo "riddle_t";
-            echo $id_thunt;
-            echo "_r";
-            echo $number;
+            echo str_replace("qrcodes/"," ",$row["qrcode"]);
             echo "*";
-            $number++;
          }
     }
