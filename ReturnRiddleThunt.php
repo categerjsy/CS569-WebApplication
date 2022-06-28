@@ -2,7 +2,7 @@
 include 'config.php';
 session_start ();
 
-$name_thunt=$_POST["thunt"];
+$name_thunt="Demo 2";//$_POST["thunt"];
 
 $query = mysqli_query($conn, "SELECT * FROM treasure_hunt WHERE name='$name_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
