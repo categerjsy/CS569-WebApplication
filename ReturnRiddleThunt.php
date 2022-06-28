@@ -13,7 +13,7 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
     while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
         $riddle=$row["id_riddle"];
         $whole=$row["qrcode"];
-        $qr=str_replace("qrcodes/"," ",$whole);
+        
         $queryr = mysqli_query($conn, "SELECT * FROM riddle WHERE id_riddle='$riddle'");
          while ($rowr = mysqli_fetch_array($queryr, MYSQLI_ASSOC)) {
             echo $rowr["text"];
@@ -24,7 +24,7 @@ $query = mysqli_query($conn, "SELECT * FROM has WHERE id_thunt='$id_thunt'");
             echo "*";
             echo $rowr["points"];
             echo "*";
-            echo $qr;
+            echo $whole;
             echo "*";
          }
     }
