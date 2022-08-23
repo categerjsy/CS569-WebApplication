@@ -27,10 +27,11 @@ session_start ();
             }else{
                 $sql = "INSERT INTO user (birth,username,password,fullname,email)
 		                VALUES (' $birth_for_database','$username','$password','$fullname','$email')";
+                 mysqli_query($conn,$sql);
+                header("Location: index.php?msg=up");
             }
 
-		mysqli_query($conn,$sql);
-        header("Location: index.php?msg=up");
+		
         }
         else{
             //echo "Password do not match";
