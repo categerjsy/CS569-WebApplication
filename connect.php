@@ -23,11 +23,11 @@ session_start ();
         if($password==$cpassword) {
             if($ru==1||$re==1){
                 ///echo "Username or email taken";
-                header("Location: index.php");
+                header("Location: index.php?msg=wrong");
             }else{
                 $sql = "INSERT INTO user (birth,username,password,fullname,email)
 		                VALUES (' $birth_for_database','$username','$password','$fullname','$email')";
-                 mysqli_query($conn,$sql);
+                mysqli_query($conn,$sql);
                 header("Location: index.php?msg=up");
             }
 
