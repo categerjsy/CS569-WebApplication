@@ -22,7 +22,7 @@ session_start ();
 
         if($password==$cpassword) {
             if($ru==1||$re==1){
-                echo "Username or email taken";
+                ///echo "Username or email taken";
                 header("Location: index.php");
             }else{
                 $sql = "INSERT INTO user (birth,username,password,fullname,email)
@@ -33,7 +33,7 @@ session_start ();
         header("Location: index.php?msg=up");
         }
         else{
-            echo "Password do not match";
+            //echo "Password do not match";
             header("Location: index.php");
         }
 	}
